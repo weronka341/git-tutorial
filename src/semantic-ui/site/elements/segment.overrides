@@ -1,7 +1,0 @@
-/*******************************
-         Site Overrides
-*******************************/
-.ui.segment {
-    border-radius: 0;
-    border: none;
-}
