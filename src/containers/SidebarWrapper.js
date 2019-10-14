@@ -12,6 +12,7 @@ export const SidebarWrapper = (props) => {
             inverted
             onHide={() => props.onHide(false)}
             vertical
+            target={props.toggleSidebarRef}
             visible={props.isVisible}
             width='thin'
         >
@@ -34,4 +35,5 @@ export const SidebarWrapper = (props) => {
 SidebarWrapper.propTypes = {
     isVisible: PropTypes.bool,
     onHide: PropTypes.func,
+    toggleSidebarRef: PropTypes.any,
 };

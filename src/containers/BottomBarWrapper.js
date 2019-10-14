@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Segment, Sidebar} from 'semantic-ui-react';
+import {Segment, Sidebar} from 'semantic-ui-react';
+import {CollapsingBar} from '../components/collapsingBar/CollapsingBar';
+import {CommandLine} from '../components/commandLine/CommandLine';
 
 export const BottomBarWrapper = (props) => {
     return (
@@ -14,12 +16,8 @@ export const BottomBarWrapper = (props) => {
             visible
             width='thin'
         >
-            <div>
-                <Icon name='home' onClick={() => props.onClick(!props.isVisible)}/>
-            </div>
-            <Segment className={props.isVisible ? 'visible' : 'hidden'}>
-                Tu bedzie konsola
-            </Segment>
+            <CollapsingBar isVisible={props.isVisible} onClick={(isVisible) => props.onClick(isVisible)}/>
+            <CommandLine isVisible={props.isVisible}/>
         </Sidebar>
     );
 };
