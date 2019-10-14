@@ -15,4 +15,11 @@ code {
 #root {
   height: 100%;
   box-sizing: border-box;
+    background: #48505e;
+}
+
+:root {
+    --light-gray: #48505e;
+    --console-green: #3ED300;
+    --title-icon-color: #DABFFF;
 }
