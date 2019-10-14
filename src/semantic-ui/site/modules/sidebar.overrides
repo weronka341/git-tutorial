@@ -1,0 +1,7 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.inverted.vertical.segment.ui.overlay.bottom.thin.visible.sidebar {
+    background: @lightGray;
+    padding: 3px 0 3px 0;
+}

@@ -1,0 +1,17 @@
+/*******************************
+         Site Overrides
+*******************************/
+.icon.toggle-menu-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+    margin-left: auto;
+    color: var(--title-icon-color);
+}
+
+.icon.toggle-menu-icon.visible {
+   display: inherit;
+}
+
+.icon.toggle-menu-icon.hidden {
+   display: none;
+}

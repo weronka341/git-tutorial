@@ -1,0 +1,22 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.segment {
+    border-radius: 0;
+    border: none;
+}
+
+.ui.segment.pushable {
+    height: calc(100% - 7.5vh);
+    margin: 0 3px 0 3px;
+}
+
+.ui.segment.title-bar {
+    height: 7.5vh;
+    font-size: 1.5em;
+    display: flex;
+    padding: 1.5rem;
+    background: var(--light-gray);
+    color: white;
+    margin: 0;
+}
