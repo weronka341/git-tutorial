@@ -1,39 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Menu, Sidebar} from 'semantic-ui-react';
+import {connect} from 'react-redux';
+import {setVisibility} from '../actions/ActionCreator';
+import {actions} from '../actions/Action';
+import {Menu, Sidebar} from 'semantic-ui-react';
+import {SidebarOptions} from '../components/sidebarOptions/SidebarOptions';
 
-export const SidebarWrapper = (props) => {
+const SidebarWrapperComponent = (props) => {
     return (
         <Sidebar
             as={Menu}
+            className={props.isBootomBarVisible ? 'moved-content' : ''}
             animation='overlay'
             direction='right'
             icon='labeled'
             inverted
             onHide={() => props.onHide(false)}
-            vertical
             target={props.toggleSidebarRef}
-            visible={props.isVisible}
-            width='thin'
+            vertical
+            visible={props.isSidebarVisible}
         >
-            <Menu.Item as='a'>
-                <Icon name='home'/>
-                Home
-            </Menu.Item>
-            <Menu.Item as='a'>
-                <Icon name='gamepad'/>
-                Games
-            </Menu.Item>
-            <Menu.Item as='a'>
-                <Icon name='camera'/>
-                Channels
-            </Menu.Item>
+            <SidebarOptions/>
         </Sidebar>
     );
 };
 
-SidebarWrapper.propTypes = {
-    isVisible: PropTypes.bool,
+SidebarWrapperComponent.propTypes = {
+    isSidebarVisible: PropTypes.bool,
+    isBootomBarVisible: PropTypes.bool,
     onHide: PropTypes.func,
-    toggleSidebarRef: PropTypes.any,
+    toggleSidebarRef: PropTypes.any
 };
+
+const mapStateToProps = (state) => {
+    return {
+        isSidebarVisible: state.visibility.sidebarVisible,
+        isBootomBarVisible: state.visibility.bottomBarVisible,
+        toggleSidebarRef: state.visibility.toggleSidebarRef,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onHide: (isVisible) => dispatch(setVisibility(actions.SET_SIDEBAR_VISIBILITY, isVisible)),
+    }
+};
+
+export const SidebarWrapper = connect(mapStateToProps, mapDispatchToProps)(SidebarWrapperComponent);

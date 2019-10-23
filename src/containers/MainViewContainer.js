@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
     Segment,
     Sidebar,
@@ -6,33 +6,23 @@ import {
 import {SidebarWrapper} from './SidebarWrapper';
 import {BottomBarWrapper} from './BottomBarWrapper';
 import {TitleBar} from '../components/titleBar/TitleBar';
+import {WelcomePageContainer} from './welcomePage/WelcomePageContainer';
+
 
 export const MainViewContainer = () => {
-    const [bottomBarVisible, setBottomBarVisible] = useState(false);
-    const [sidebarVisible, setSidebarVisible] = useState(false);
-    const toggleSidebarRef = React.useRef();
 
     return (
         <React.Fragment>
-            <TitleBar
-                toggleSidebarRef={toggleSidebarRef}
-                isVisible={sidebarVisible}
-                onClick={(isVisible) => setSidebarVisible(isVisible)}
-            />
+            <TitleBar/>
             <Sidebar.Pushable as={Segment}>
-                <SidebarWrapper toggleSidebarRef={toggleSidebarRef}
-                                isVisible={sidebarVisible}
-                                onHide={(isVisible) => setSidebarVisible(isVisible)}
-                />
-                <BottomBarWrapper isVisible={bottomBarVisible}
-                                  onClick={(isVisible) => setBottomBarVisible(isVisible)}
-                />
+                <SidebarWrapper/>
+                <BottomBarWrapper/>
                 <Sidebar.Pusher>
                     <Segment basic>
+                        <WelcomePageContainer/>
                     </Segment>
                 </Sidebar.Pusher>
             </Sidebar.Pushable>
         </React.Fragment>
     );
 };
-

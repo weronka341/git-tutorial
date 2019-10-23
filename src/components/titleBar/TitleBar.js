@@ -1,25 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Icon, Ref, Segment, StepTitle} from 'semantic-ui-react';
+import {Icon, Segment, StepTitle, Ref} from 'semantic-ui-react';
 import './TitleBar.css';
+import {setVisibility} from '../../actions/ActionCreator';
+import {actions} from '../../actions/Action';
+import {connect} from 'react-redux';
 
 const renderToggleSidebarButton = (props) => {
     return (
         <React.Fragment>
             <Ref innerRef={props.toggleSidebarRef}>
                 <Icon className={'toggle-menu-icon' + (props.isVisible ? ' visible' : ' hidden')}
-                      name='tasks'
+                      name='arrow circle right'
                 />
             </Ref>
             <Icon className={'toggle-menu-icon' + (props.isVisible ? ' hidden' : ' visible')}
-                  name='tasks'
+                  name='arrow circle left'
                   onClick={() => props.onClick(true)}
             />
         </React.Fragment>
     );
 };
 
-export const TitleBar = (props) => {
+export const TitleBarComponent = (props) => {
     return (
         <Segment className='title-bar'>
             <Icon id='title-icon' name='git'/>
@@ -31,8 +34,23 @@ export const TitleBar = (props) => {
     );
 };
 
-TitleBar.propTypes = {
+TitleBarComponent.propTypes = {
     isVisible: PropTypes.bool,
     onClick: PropTypes.func,
     toggleSidebarRef: PropTypes.any,
 };
+
+const mapStateToProps = (state) => {
+    return {
+        isVisible: state.visibility.sidebarVisible,
+        toggleSidebarRef: state.visibility.toggleSidebarRef,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClick: (isVisible) => dispatch(setVisibility(actions.SET_SIDEBAR_VISIBILITY, isVisible)),
+    }
+};
+
+export const TitleBar = connect(mapStateToProps, mapDispatchToProps)(TitleBarComponent);
