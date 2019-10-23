@@ -1,0 +1,18 @@
+#welcome-page {
+    transform: translate3d(0, 0, 0);
+    transition: transform 500ms ease;
+    width: 65vw;
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+#welcome-page.moved-content {
+    transform: translate3d(-10vw, 0, 0);
+    transition: transform 500ms ease;
+    margin-top: 5vh;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1.6em;
+}
