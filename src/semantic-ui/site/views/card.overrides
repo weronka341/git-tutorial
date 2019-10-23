@@ -1,3 +1,35 @@
 /*******************************
     User Variable Overrides
 *******************************/
+.ui.card > .content.teal {
+    background: rgba(0, 181, 173,0.1);
+}
+
+.ui.card.teal, .ui.card.teal:hover {
+    margin-bottom: 4vh;
+    box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 0px 2px 1px #00B5AD, 0px 1px 3px 0px #D4D4D5;
+}
+
+.ui.card > .content.purple {
+    background: rgba(163, 51, 200, 0.1);
+}
+
+.ui.card.purple, .ui.card.purple:hover {
+   margin-bottom: 4vh;
+   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 0px 2px 1px #A333C8, 0px 1px 3px 0px #D4D4D5;
+}
+
+.ui.card > .content.blue {
+    background: rgba(33, 133, 208, 0.1);
+}
+
+.ui.card.blue, .ui.card.blue:hover {
+    margin-bottom: 4vh;
+    box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 0px 2px 1px #2185D0, 0px 1px 3px 0px #D4D4D5;
+}
+
+.ui.card > .content > .description {
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.6em;
+    font-size: 1.2rem;
+}

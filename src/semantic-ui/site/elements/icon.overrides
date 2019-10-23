@@ -9,9 +9,13 @@
 }
 
 .icon.toggle-menu-icon.visible {
-   display: inherit;
+    display: inherit;
 }
 
 .icon.toggle-menu-icon.hidden {
-   display: none;
+    display: none;
+}
+.ui.steps .step > .icon.option-icon {
+    font-size: 1.6rem;
+    margin-right: 0.7rem;
 }

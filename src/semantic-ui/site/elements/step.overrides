@@ -1,3 +1,39 @@
 /*******************************
          Site Overrides
 *******************************/
+.ui.vertical.steps.dark .step:first-child, .ui.vertical.steps.dark .step:last-child {
+    border-radius: 0;
+}
+
+.ui.steps.dark .step {
+    color: rgba(255, 255, 255, 0.8);
+    background: #626c7f;
+}
+
+.ui.vertical.steps.dark .step {
+    border-bottom: 1px solid rgba(34, 36, 38, 0.30);
+}
+
+.ui.steps.dark .step.active, .ui.steps.dark .step.active:after {
+    color: rgba(255, 255, 255, 0.8);
+    background: #515969;
+}
+
+.ui.steps.dark .step.active .title {
+    color: rgba(229,211,255, 0.8);
+}
+
+.ui.steps.dark .step.active:hover, .ui.steps.dark .step.active:hover:after {
+    color: rgba(255, 255, 255, 0.8);
+    background: #515969;
+}
+
+.ui.steps.dark .step:hover, .ui.steps.dark .step:hover:after {
+    color: rgba(255, 255, 255, 0.8);
+    background: #596374;
+}
+
+.ui.steps.dark {
+    border: none;
+    border-left: 1px solid rgba(89, 99, 116, 0.9);
+}
