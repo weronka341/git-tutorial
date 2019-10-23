@@ -1,22 +1,22 @@
 {
+  "homepage": ".",
   "name": "git-tutorial",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gh-pages": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "react-redux": "^7.1.1",
     "react-scripts": "3.1.2",
+    "redux": "^4.0.4",
     "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject",
-    "predeploy": "craco build",
-    "deploy": "gh-pages -d build"
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +37,5 @@
     "@craco/craco": "^5.5.0",
     "@semantic-ui-react/craco-less": "^1.1.0",
     "semantic-ui-less": "^2.4.1"
-  },
-  "homepage": "https://weronka341.github.io/git-tutorial/"
+  }
 }
