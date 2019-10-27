@@ -1,7 +1,7 @@
 #welcome-page {
     transform: translate3d(0, 0, 0);
     transition: transform 500ms ease;
-    width: 65vw;
+    width: 60vw;
     margin-top: 5vh;
     padding-bottom: 5vh;
 }
@@ -15,4 +15,9 @@
 p {
     font-size: 1.3rem;
     line-height: 1.6em;
+}
+
+#start-icon:before, #start-icon {
+    margin-left: 2vw;
+    color: #21BA45;
 }
