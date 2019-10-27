@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {actions} from '../../actions/Action';
 import {Icon, Step} from 'semantic-ui-react';
-import {shortTitles} from '../../content/titles/SectionTitles';
+import {menuOptionsTitles} from '../../content/titles/SectionTitles';
 import {performActionOnSidebarOption} from '../../actions/ActionCreator';
 
 const SidebarOptionsComponent = (props) => {
@@ -12,7 +12,7 @@ const SidebarOptionsComponent = (props) => {
                     className='dark'
                     size='tiny'
         >
-            {Object.entries(shortTitles).map(([option, title]) =>
+            {Object.entries(menuOptionsTitles).map(([option, title]) =>
                 <Step key={option}
                       completed={isOptionVisited(props, option)}
                       active={isOptionActive(props, option)}
