@@ -6,8 +6,7 @@ import {
 import {SidebarWrapper} from './SidebarWrapper';
 import {BottomBarWrapper} from './BottomBarWrapper';
 import {TitleBar} from '../components/titleBar/TitleBar';
-import {WelcomePageContainer} from './welcomePage/WelcomePageContainer';
-
+import {TutorialContentContainer} from './tutorialContent/TutorialContentContainer';
 
 export const MainViewContainer = () => {
 
@@ -19,7 +18,7 @@ export const MainViewContainer = () => {
                 <BottomBarWrapper/>
                 <Sidebar.Pusher>
                     <Segment basic>
-                        <WelcomePageContainer/>
+                        <TutorialContentContainer/>
                     </Segment>
                 </Sidebar.Pusher>
             </Sidebar.Pushable>
