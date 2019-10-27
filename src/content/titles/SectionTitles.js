@@ -1,18 +1,14 @@
-export const shortTitles = {
+export const menuOptionsTitles = {
+    INTRODUCTION: 'Git tutorial',
     REVISION_CONTROL: 'System kontroli wersji',
     WHAT_IS_GIT: 'Git - czym jest?',
     HOW_GIT_WORKS: 'Git – jak działa?',
     GIT_INIT: 'Git init',
     GIT_CLONE: 'Git clone',
     GIT_CONFIG: 'Git config',
-    GIT_WORKFLOW: 'Wprowadzanie zmian',
-    WORKING_DIRECTORY: 'Katalog roboczy',
-    STAGING_AREA: 'Przechowalnia',
-    REPOSITORY: 'Repozytorium',
+    GIT_WORKFLOW: 'Etapy wprowadzania zmian',
     DIR_TO_STAGE: 'Katalog roboczy ↔ Przechowalnia',
     STAGE_TO_REPO: 'Przechowalnia ↔ Repozytorium',
-    GIT_COMMIT: 'Git commit',
-    GIT_COMMIT_AMEND: 'Git commit --amend',
     GIT_STASH: 'Git stash',
     GIT_BRANCHING: 'Git branching',
     GIT_REFS: 'Git Refs',
@@ -24,10 +20,6 @@ export const shortTitles = {
     GIT_REBASE: 'Git Rebase',
     INTERACTIVE_REBASE: 'Interaktywny rebase',
     FIXING_MISTAKES: 'Naprawianie błędów',
-    GIT_RM: 'Git rm',
-    GIT_CLEAN: 'Git clean',
-    GIT_REVERT: 'Git revert',
-    GIT_RESET: 'Git reset',
     GIT_REMOTE: 'Zdalne repozytorium',
     GIT_FETCH: 'Git fetch',
     GIT_PULL: 'Git pull',
@@ -36,8 +28,22 @@ export const shortTitles = {
     GITIGNORE: 'Plik .gitignore',
 };
 
+export const shortTitles = {
+    ...menuOptionsTitles,
+    WORKING_DIRECTORY: 'Katalog roboczy',
+    STAGING_AREA: 'Przechowalnia',
+    REPOSITORY: 'Repozytorium',
+    GIT_COMMIT: 'Git commit',
+    GIT_COMMIT_AMEND: 'Git commit --amend',
+    GIT_RM: 'Git rm',
+    GIT_CLEAN: 'Git clean',
+    GIT_REVERT: 'Git revert',
+    GIT_RESET: 'Git reset',
+};
+
 export const fullTitles = {
     ...shortTitles,
+    INTRODUCTION: 'Witaj w interaktywnym tutorialu do nauki systemu kontroli wersji Git!',
     GIT_INIT: 'Tworzenie nowego repozytorium – git init',
     GIT_CLONE: 'Klonowanie istniejącego repozytorium – git clone',
     GIT_CONFIG: 'Przedstaw się! – git config',
