@@ -22,4 +22,9 @@ code {
     --light-gray: #48505e;
     --console-green: #3ED300;
     --title-icon-color: #DABFFF;
+    --yellow: #FBBD08;
+    --yellow-background: rgba(251, 189, 8, 0.1);
+    --lilac-background: rgba(218, 191, 255, 0.1);
+    --teal-background: rgba(0, 181, 173, 0.1);
+    --blue-background: rgba(49, 198, 235, 0.2);
 }
