@@ -1,8 +1,8 @@
 import {actions} from '../actions/Action';
 
 const initialTableOfContentState = {
-    activeOption: null,
-    visitedOptions: [],
+    activeOption: 'INTRODUCTION',
+    visitedOptions: ['INTRODUCTION'],
 };
 
 export const sidebarOptionsReducer = (state = initialTableOfContentState, action) => {
