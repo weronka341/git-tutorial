@@ -19,3 +19,23 @@
     font-size: 1.6rem;
     margin-right: 0.7rem;
 }
+
+i.icon.sticky-arrow {
+    font-size: 3em;
+    color: var(--light-gray);
+    opacity: 0.1;
+    position: sticky;
+    top: 50vh;
+    width: 100%;
+    text-align: left;
+    margin-left: 1vw;
+}
+
+i.icon.sticky-arrow:hover {
+    opacity: 0.2;
+}
+
+i.icon.sticky-arrow.left {
+    text-align: right;
+    margin-left: -1vw;
+}
