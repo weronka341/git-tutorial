@@ -1,0 +1,21 @@
+.highlight {
+    background: var(--teal-background);
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.name {
+    background: var(--yellow-background);
+}
+
+.branch-name {
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.3);
+}
