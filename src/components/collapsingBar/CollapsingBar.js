@@ -8,9 +8,9 @@ import {connect} from 'react-redux';
 
 export const CollapsingBarComponent = (props) => {
     return (
-        <div className='collapsing-bar'>
-            <Icon name={props.isVisible ? 'minus square outline' : 'plus square outline'}
-                  onClick={() => props.onClick(!props.isVisible)}/>
+        <div className='collapsing-bar'
+             onClick={() => props.onClick(!props.isVisible)}>
+            <Icon name={props.isVisible ? 'minus square outline' : 'plus square outline'}/>
         </div>
     );
 };
