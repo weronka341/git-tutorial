@@ -27,4 +27,7 @@ code {
     --lilac-background: rgba(218, 191, 255, 0.1);
     --teal-background: rgba(0, 181, 173, 0.1);
     --blue-background: rgba(49, 198, 235, 0.2);
+    --light-gray-background: rgba(72, 80, 94, 0.8);
+    --orange: #fb8008;
+    --orange-background: rgba(251, 128, 8, 0.3);
 }
