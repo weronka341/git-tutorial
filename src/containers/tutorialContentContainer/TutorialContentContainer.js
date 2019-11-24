@@ -1,20 +1,39 @@
 import React from 'react'
-import {Container, Icon, Rail} from 'semantic-ui-react'
-import './TutorialContentContainer.css';
+import {
+    Container,
+    Grid,
+    GridColumn,
+    GridRow,
+    Icon,
+    Rail,
+    Segment
+} from 'semantic-ui-react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {renderSelectedTutorialSection} from '../../utils/RenderUtil';
 import {performActionOnSidebarOption} from '../../actions/ActionCreator';
 import {actions} from '../../actions/Action';
 import {menuOptionsTitles} from '../../content/titles/SectionTitles';
+import {SVGDisplayArea} from '../svgDisplayArea/SVGDisplayArea';
+import {exercisesText} from '../../content/tutorial/ExercisesText';
+import {ExerciseHelperMenu} from '../../components/exerciseHelperMenu/ExerciseHelperMenu';
+import './TutorialContentContainer.css';
 
 const TutorialContent = (props) => {
-    const {activeOption} = props;
+    return <React.Fragment>
+        {props.isExerciseDisplayed
+            ? renderExercise(props)
+            : renderTutorialSection(props)
+        }
+    </React.Fragment>
+};
+
+const renderTutorialSection = (props) => {
     return (
         <Container id='welcome-page'
                    className={props.isSidebarVisible ? 'moved-content' : ''}
                    textAlign='justified'>
-            {renderSelectedTutorialSection[activeOption]}
+            {renderSelectedTutorialSection[props.activeOption]}
             <Rail position='right'>
                 <Icon name='chevron right'
                       className='sticky-arrow'
@@ -28,11 +47,26 @@ const TutorialContent = (props) => {
                 />
             </Rail>
         </Container>
-    );
+    )
 };
 
-TutorialContent.propTypes = {
-    isSidebarVisible: PropTypes.bool,
+const renderExercise = (props) => {
+    return (
+        <React.Fragment>
+            <Segment tertiary id='exercise-helper'>
+                <Grid verticalAlign='middle' columns={2} centered>
+                    <GridRow>
+                        <GridColumn width={14}>
+                            {exercisesText[props.activeOption].text}
+                        </GridColumn>
+                        <GridColumn width={2}>
+                            <ExerciseHelperMenu/>
+                        </GridColumn>
+                    </GridRow>
+                </Grid>
+            </Segment>
+            <SVGDisplayArea/>
+        </React.Fragment>);
 };
 
 const selectNextOption = (props) => {
@@ -55,11 +89,16 @@ const selectPreviousOption = (props) => {
     }
 };
 
+TutorialContent.propTypes = {
+    isSidebarVisible: PropTypes.bool,
+};
+
 const mapStateToProps = (state) => {
     return {
         isSidebarVisible: state.visibility.sidebarVisible,
         activeOption: state.options.activeOption,
         visitedOptions: state.options.visitedOptions,
+        isExerciseDisplayed: state.animations.isExerciseDisplayed,
     }
 };
 
