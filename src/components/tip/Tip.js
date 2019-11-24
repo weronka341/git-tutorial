@@ -7,7 +7,7 @@ export const Tip = (props) => (
             <Header as='h3'>
                 <Icon name='lightbulb outline'/>
                 <Header.Content>
-                    TIP
+                    {props.title}
                 </Header.Content>
             </Header>
         </Card.Content>
