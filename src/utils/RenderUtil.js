@@ -26,6 +26,7 @@ import {GitPush} from '../content/tutorial/GitPush';
 import {GitHub} from '../content/tutorial/GitHub';
 import {Gitignore} from '../content/tutorial/Gitignore';
 import {Introduction} from '../content/tutorial/Introduction';
+import {ExerciseIntroPage} from '../containers/ExerciseIntroPage';
 
 export const renderSelectedTutorialSection = {
     INTRODUCTION: <Introduction/>,
@@ -38,6 +39,7 @@ export const renderSelectedTutorialSection = {
     GIT_WORKFLOW: <GitWorkflow/>,
     DIR_TO_STAGE: <DirToStage/>,
     STAGE_TO_REPO: <StageToRepo/>,
+    COMMIT_EXERCISE: <ExerciseIntroPage name='COMMIT_EXERCISE'/>,
     GIT_STASH: <GitStash/>,
     GIT_BRANCHING: <GitBranching/>,
     GIT_REFS: <GitRefs/>,
