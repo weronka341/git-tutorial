@@ -32,5 +32,9 @@
 
 .ui.visible.overlay.sidebar ~ .pusher {
     height: inherit;
-    overflow: scroll;
+    overflow: auto;
+}
+
+.ui.basic.segment {
+    height: 100%;
 }

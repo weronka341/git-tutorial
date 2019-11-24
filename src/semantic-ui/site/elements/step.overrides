@@ -10,6 +10,10 @@
     background: #626c7f;
 }
 
+.ui.steps .active.step .icon  {
+    color: var(--title-icon-color);
+}
+
 .ui.vertical.steps.dark .step {
     border-bottom: 1px solid rgba(34, 36, 38, 0.30);
 }

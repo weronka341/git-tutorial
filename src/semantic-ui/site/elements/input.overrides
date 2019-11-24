@@ -1,3 +1,18 @@
 /*******************************
          Site Overrides
 *******************************/
+.ui.fluid.input > input {
+    background-color: inherit;
+    border: none;
+    color: var(--console-green);
+    caret-color: var(--console-green);
+}
+
+.ui[class*="left icon"].input > i.icon {
+    color: var(--console-green);
+    width: 2em;
+}
+
+.ui[class*="left icon"].input > input {
+    padding-left: 2em !important;
+}
