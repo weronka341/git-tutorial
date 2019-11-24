@@ -10,7 +10,7 @@ const SidebarWrapperComponent = (props) => {
     return (
         <Sidebar
             as={Menu}
-            className={props.isBootomBarVisible ? 'moved-content' : ''}
+            className={props.isBottomBarVisible ? 'moved-content' : ''}
             animation='overlay'
             direction='right'
             icon='labeled'
@@ -27,7 +27,7 @@ const SidebarWrapperComponent = (props) => {
 
 SidebarWrapperComponent.propTypes = {
     isSidebarVisible: PropTypes.bool,
-    isBootomBarVisible: PropTypes.bool,
+    isBottomBarVisible: PropTypes.bool,
     onHide: PropTypes.func,
     toggleSidebarRef: PropTypes.any
 };
@@ -35,7 +35,7 @@ SidebarWrapperComponent.propTypes = {
 const mapStateToProps = (state) => {
     return {
         isSidebarVisible: state.visibility.sidebarVisible,
-        isBootomBarVisible: state.visibility.bottomBarVisible,
+        isBottomBarVisible: state.visibility.bottomBarVisible,
         toggleSidebarRef: state.visibility.toggleSidebarRef,
     }
 };
