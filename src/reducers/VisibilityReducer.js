@@ -12,12 +12,12 @@ export const visibilityReducer = (state = initialVisibilityState, action) => {
         case actions.SET_SIDEBAR_VISIBILITY:
             return {
                 ...state,
-                sidebarVisible: action.isVisible
+                sidebarVisible: action.isVisible,
             };
         case actions.SET_BOTTOMBAR_VISIBILITY:
             return {
                 ...state,
-                bottomBarVisible: action.isVisible
+                bottomBarVisible: action.isVisible,
             };
         default:
             return state;
