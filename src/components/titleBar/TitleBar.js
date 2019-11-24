@@ -14,10 +14,13 @@ const renderToggleSidebarButton = (props) => {
                       name='arrow circle right'
                 />
             </Ref>
-            <Icon className={'toggle-menu-icon' + (props.isVisible ? ' hidden' : ' visible')}
-                  name='arrow circle left'
-                  onClick={() => props.onClick(true)}
-            />
+            {props.isDisabled
+                ? <Icon disabled name='arrow circle left'/>
+                : <Icon className={'toggle-menu-icon' + (props.isVisible ? ' hidden' : ' visible')}
+                        name='arrow circle left'
+                        onClick={() => props.onClick(true)}
+                />
+            }
         </React.Fragment>
     );
 };
@@ -38,12 +41,14 @@ TitleBarComponent.propTypes = {
     isVisible: PropTypes.bool,
     onClick: PropTypes.func,
     toggleSidebarRef: PropTypes.any,
+    isDisabled: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {
     return {
         isVisible: state.visibility.sidebarVisible,
         toggleSidebarRef: state.visibility.toggleSidebarRef,
+        isDisabled: state.animations.isExerciseDisplayed,
     }
 };
 
