@@ -6,7 +6,7 @@ import {
 import {SidebarWrapper} from './SidebarWrapper';
 import {BottomBarWrapper} from './BottomBarWrapper';
 import {TitleBar} from '../components/titleBar/TitleBar';
-import {TutorialContentContainer} from './tutorialContent/TutorialContentContainer';
+import {TutorialContentContainer} from './tutorialContentContainer/TutorialContentContainer';
 
 export const MainViewContainer = () => {
 
