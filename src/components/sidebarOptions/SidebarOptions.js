@@ -16,14 +16,17 @@ const SidebarOptionsComponent = (props) => {
                 <Step key={option}
                       completed={isOptionVisited(props, option)}
                       active={isOptionActive(props, option)}
-                      onClick={() => {
-                          props.setActive(option);
-                          props.addToVisited(option);
-                      }}
+                      onClick={option.includes('EXERCISE')
+                          ? () => props.setActive(option)
+                          : () => {
+                              props.setActive(option);
+                              props.addToVisited(option);
+                          }
+                      }
                 >
                     <Icon
                         className='option-icon'
-                        name='asexual'
+                        name={option.includes('EXERCISE') ? 'code branch' : 'asexual'}
                     />
                     <Step.Content>
                         <Step.Title>{title}</Step.Title>
@@ -35,7 +38,9 @@ const SidebarOptionsComponent = (props) => {
 };
 
 const isOptionVisited = (props, option) => {
-    return props.visitedOptions.includes(option);
+    return props.visitedOptions
+        .filter(option => option !== props.activeOption && !option.includes('EXERCISE'))
+        .includes(option);
 };
 
 const isOptionActive = (props, option) => {
