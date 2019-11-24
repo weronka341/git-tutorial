@@ -1,0 +1,109 @@
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+svg:not(:root) {
+    overflow: visible !important;
+}
+
+circle {
+    fill: var(--yellow-background);
+    stroke: var(--yellow);
+    stroke-width: 3px;
+}
+
+rect.orange {
+    fill: var(--orange-background);
+    stroke: var(--orange);
+    stroke-width: 2px;
+}
+
+marker.orange {
+    fill: var(--orange);
+}
+
+marker {
+    fill: var(--light-gray-background);
+    stroke: none;
+}
+
+.grey-arrow {
+    fill: none;
+    stroke: var(--light-gray-background);
+    stroke-width: 3px;
+}
+
+text {
+    font-size: 0.8em;
+}
+
+.scale-up {
+    -webkit-animation: scale-up 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up {
+    0% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+    30% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up {
+    0% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+    30% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.scale-up-smaller {
+    -webkit-animation: scale-up-smaller 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-smaller 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-smaller {
+    0% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-smaller {
+    0% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.ref-name {
+    font-weight: bold;
+    font-size: 0.9em;
+}
