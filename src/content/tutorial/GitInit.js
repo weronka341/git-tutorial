@@ -24,7 +24,7 @@ export const GitInit = () => {
                 katalogu z już istniejącym projektem, zostanie on przekształcony w repozytorium.
             </p>
             <CommandText>$ git init</CommandText>
-            <Tip>
+            <Tip title='TIP'>
                 <p>
                     Usunięcie katalogu <span className='bold'>.git</span> powoduje usunięcie repozytorium, lecz
                     istniejące pliki z

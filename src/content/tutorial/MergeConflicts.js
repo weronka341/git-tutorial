@@ -43,7 +43,7 @@ export const MergeConflicts = () => {
             <p>
                 – do obserwacji różnic między plikami.
             </p>
-            <Tip>
+            <Tip title='TIP'>
                 <p>
                     Dobrze wiedzieć, jak rozwiązać konflikty używając linii poleceń, lecz w codziennej pracy jest to
                     dość uciążliwe. Istnieją narzędzia, które wspomagają ten proces, takie jak&nbsp;

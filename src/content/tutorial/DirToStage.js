@@ -51,7 +51,7 @@ export const DirToStage = () => {
             <p>
                 Służy do przeniesienia lub zmiany nazwy pliku.
             </p>
-            <Tip>
+            <Tip title='TIP'>
                 <p>
                     Stan plików (<span className='italic'>untracked/modified/staged</span>) możesz weryfikować za pomocą
                     polecenia <span className='bold'>git status</span>, natomiast aby zobaczyć różnicę pomiędzy

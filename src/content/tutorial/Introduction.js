@@ -1,6 +1,6 @@
 import React from 'react'
 import {Divider, Header, Icon, Card} from 'semantic-ui-react'
-import '../../containers/tutorialContent/TutorialContentContainer.css';
+import '../../containers/tutorialContentContainer/TutorialContentContainer.css';
 import {fullTitles} from '../titles/SectionTitles';
 
 export const Introduction = () => (

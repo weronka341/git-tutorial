@@ -48,7 +48,7 @@ export const GitRemote = () => {
                 Zmieni nazwę repozytorium z <span className='name'>zdalne_repozytorium</span>&nbsp;
                 na <span className='name'>nowe_zdalne_repozytorium</span>.
             </p>
-            <Tip>
+            <Tip title='TIP'>
                 <p>
                     Zdalne repozytorium, z którego sklonowany jest Twój lokalny projekt (komenda&nbsp;
                     <span className='bold'>git clone</span>), jest automatycznie dodawane jako&nbsp;

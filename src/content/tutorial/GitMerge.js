@@ -54,7 +54,7 @@ export const GitMerge = () => {
             <p>
                 Pokazany wyżej przykład dołącza zmiany wprowadzone na gałęzi feature do gałęzi master.
             </p>
-            <Tip>
+            <Tip title='TIP'>
                 <p>
                     Jeśli dodasz kilka commitów na swojej gałęzi feature i chcesz ją złączyć z gałęzią master, na której
                     od czasu rozgałęzienia nie było żadnych zmian, to dostaniesz komunikat o&nbsp;

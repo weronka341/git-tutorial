@@ -45,10 +45,6 @@ export const GitBranching = () => {
             <p>
                 Stworzy nową gałąź o podanej nazwie bez przełączania się na nią.
             </p>
-            <CommandText>$ git stash apply</CommandText>
-            <p>
-                Wprowadza zmiany do katalogu roboczego, jednocześnie nadal przechowując je w schowku.
-            </p>
             <CommandText>$ git branch -d nazwa_galezi </CommandText>
             <p>
                 Usunie podaną gałąź, o ile nie ma na niej „niezmergowanych” zmian.
@@ -72,7 +68,7 @@ export const GitBranching = () => {
                 Stworzy <span className='name'>nowa_galaz</span> jako rozgałęzienie
                 z <span className='name'>istniejaca_galaz</span>.
             </p>
-            <Tip>
+            <Tip title='TIP'>
                 Gałąź, na której aktualnie pracujemy, jest wyróżniona gwiazdką na liście gałęzi w wynikach komendy
                 &nbsp;<span className='bold'>git branch</span>.
             </Tip>
