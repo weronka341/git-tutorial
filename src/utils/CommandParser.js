@@ -8,45 +8,47 @@ const allowedCommands = [
     'branch',
 ];
 
+const commandNotSupportedMessage = 'Przepraszamy, ta komenda nie jest obsługiwana.';
+
 export const commandParser = (command, refs) => {
-    const words = command.split(' ');
-    if (words[0] === 'git') {
-        return isCommandValid(words, refs);
+    const commandWords = command.match(/('.*?'|".*?"|\S+)/g);
+    if (commandWords && commandWords[0] === 'git' && allowedCommands.includes(commandWords[1])) {
+        const actionObject = validateCommandAndPrepareAction(commandWords, refs);
+        return actionObject
+            ? actionObject.type || actionObject.message
+            : commandNotSupportedMessage;
     } else {
-        return false;
+        return commandNotSupportedMessage;
     }
 };
 
-const isCommandValid = (commandWords, refs) => {
-    const command = commandWords[1];
-    if (allowedCommands.includes(command)) {
-        switch (command) {
-            case 'commit':
-                return isCommitCommandValid(commandWords);
-            case 'merge':
-            case 'rebase':
-                return false;
-            case 'checkout':
-                return isCheckoutCommandValid(commandWords, refs);
-            case 'branch':
-                return isBranchCommandValid(commandWords, refs);
-            default:
-                return false;
-        }
-    } else {
-        return false;
+const validateCommandAndPrepareAction = (commandWords, refs) => {
+    switch (commandWords[1]) {
+        case 'commit':
+            return validateCommitCommand(commandWords);
+        case 'merge':
+        case 'rebase':
+            return false;
+        case 'checkout':
+            return validateCheckoutCommand(commandWords, refs);
+        case 'branch':
+            return validateBranchCommand(commandWords, refs);
+        default:
+            return false;
     }
 };
 
-const isCommitCommandValid = (commandWords) => {
-    if (commandWords.length === 2) {
+const validateCommitCommand = (commandWords) => {
+    const validFlagsWithNoArgs = ['-a', '-all'];
+    const validFlagsWithOneArg = ['-m'];
+    const command = commandWords
         return {
             type: actions.ADD_COMMIT,
         };
-    }
+
 };
 
-const isCheckoutCommandValid = (commandWords, refs) => {
+const validateCheckoutCommand = (commandWords, refs) => {
     const refName = commandWords[2];
     if (commandWords.length === 3 && refs.filter(ref => ref.name === refName).length === 1) {
         return {
@@ -57,7 +59,7 @@ const isCheckoutCommandValid = (commandWords, refs) => {
     return false;
 };
 
-const isBranchCommandValid = (commandWords, refs) => {
+const validateBranchCommand = (commandWords, refs) => {
     const refName = commandWords[2];
     if (commandWords.length === 3 && refs.filter(ref => ref.name === refName).length === 0) {
         return {
