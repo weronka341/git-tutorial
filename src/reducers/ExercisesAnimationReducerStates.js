@@ -5,12 +5,11 @@ export const initialAnimationState = {
         commit: {
             distanceX: 100,
             distanceY: 90,
-            positionY: 50,
+            positionY: 40,
             radius: 24,
         },
         shift: 100,
     },
-
     activeRef: {
         name: 'master',
         position: 0,
