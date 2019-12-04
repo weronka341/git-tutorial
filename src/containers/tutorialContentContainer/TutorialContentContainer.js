@@ -35,16 +35,20 @@ const renderTutorialSection = (props) => {
                    textAlign='justified'>
             {renderSelectedTutorialSection[props.activeOption]}
             <Rail position='right'>
+                {checkIfOptionExists(props, 1) &&
                 <Icon name='chevron right'
                       className='sticky-arrow'
                       onClick={() => selectNextOption(props)}
                 />
+                }
             </Rail>
             <Rail position='left'>
+                {checkIfOptionExists(props, -1) &&
                 <Icon name='chevron left'
                       className='sticky-arrow left'
                       onClick={() => selectPreviousOption(props)}
                 />
+                }
             </Rail>
         </Container>
     )
@@ -69,7 +73,7 @@ const renderExercise = (props) => {
         </React.Fragment>);
 };
 
-const selectNextOption = (props) => {
+export const selectNextOption = (props) => {
     const optionsArray = Object.keys(menuOptionsTitles);
     const activeOptionIndex = optionsArray.indexOf(props.activeOption);
     const nextOptionIndex = activeOptionIndex + 1;
@@ -89,6 +93,13 @@ const selectPreviousOption = (props) => {
     }
 };
 
+const checkIfOptionExists = (props, indexOffset) => {
+    const optionsArray = Object.keys(menuOptionsTitles);
+    const activeOptionIndex = optionsArray.indexOf(props.activeOption);
+    const previousOptionIndex = activeOptionIndex + indexOffset;
+    return activeOptionIndex !== -1 && optionsArray[previousOptionIndex];
+};
+
 TutorialContent.propTypes = {
     isSidebarVisible: PropTypes.bool,
 };
@@ -105,7 +116,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setActive: (option) => dispatch(performActionOnSidebarOption(actions.SET_ACTIVE_SIDEBAR_OPTION, option)),
-        addToVisited: (option) => dispatch(performActionOnSidebarOption(actions.ADD_OPTION_TO_VISITED, option))
+        addToVisited: (option) => dispatch(performActionOnSidebarOption(actions.ADD_OPTION_TO_VISITED, option)),
     }
 };
 
