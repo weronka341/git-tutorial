@@ -1,14 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {Icon} from 'semantic-ui-react';
-import './CollapsingBar.css';
 import {setVisibility} from '../../actions/ActionCreator';
 import {actions} from '../../actions/Action';
-import {connect} from 'react-redux';
+import './CollapsingBar.css';
 
 export const CollapsingBarComponent = (props) => {
     return (
-        <div className='collapsing-bar'
+        <div className={'collapsing-bar ' + (props.isVisible ? 'move' : 'stay')}
              onClick={() => props.onClick(!props.isVisible)}>
             <Icon name={props.isVisible ? 'minus square outline' : 'plus square outline'}/>
         </div>

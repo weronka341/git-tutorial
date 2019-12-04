@@ -1,16 +1,34 @@
 .command-line {
     text-align: left;
     background: black;
-    height: 15vh;
-    margin-top: 3px;
-    padding-left: 3px;
+    overflow: hidden;
     color: var(--console-green);
 }
 
-.visible {
-    display: inherit;
+.command-line.visible {
+    max-height: 15vh;
+    transition: max-height 0.15s ease-out;
+    margin-bottom: 6px;
+    padding-top: 3px;
+    padding-left: 3px;
 }
 
-.hidden {
+.command-line.hidden {
+    transition: max-height 0.15s ease-out;
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+}
+
+#command-history {
+    opacity: 1;
+    height: 10vh;
+    padding-left: 12px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    white-space: pre-wrap;
+}
+
+#command-history::-webkit-scrollbar {
     display: none;
 }

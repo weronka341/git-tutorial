@@ -8,17 +8,17 @@ const allowedCommands = [
     'branch',
 ];
 
-const commandNotSupportedMessage = 'Przepraszamy, ta komenda nie jest obsługiwana.';
+const commandNotSupportedMessage = ' - przepraszamy, ta komenda nie jest obsługiwana.';
 
 export const commandParser = (command, refs) => {
     const commandWords = command.match(/('.*?'|".*?"|\S+)/g);
     if (commandWords && commandWords[0] === 'git' && allowedCommands.includes(commandWords[1])) {
         const actionObject = validateCommandAndPrepareAction(commandWords, refs);
         return actionObject
-            ? actionObject.type || actionObject.message
-            : commandNotSupportedMessage;
+            ? actionObject
+            : {message: commandNotSupportedMessage};
     } else {
-        return commandNotSupportedMessage;
+        return {message: commandNotSupportedMessage};
     }
 };
 
@@ -39,35 +39,61 @@ const validateCommandAndPrepareAction = (commandWords, refs) => {
 };
 
 const validateCommitCommand = (commandWords) => {
-    const validFlagsWithNoArgs = ['-a', '-all'];
-    const validFlagsWithOneArg = ['-m'];
-    const command = commandWords
-        return {
-            type: actions.ADD_COMMIT,
-        };
-
+    const actionObject = {type: actions.ADD_COMMIT};
+    if (commandWords.length === 2)
+        return actionObject;
+    return commandWords[2] === '-m' && commandWords[3].match(/('.*?'|".*?")/g)
+        ? actionObject
+        : null;
 };
 
 const validateCheckoutCommand = (commandWords, refs) => {
+    if (commandWords[2] === '-b')
+        return validateCheckoutWithBranchCommand(commandWords, refs);
     const refName = commandWords[2];
-    if (commandWords.length === 3 && refs.filter(ref => ref.name === refName).length === 1) {
+    if (commandWords.length === 3 && checkIfBranchExists(refs, refName))
         return {
             type: actions.CHECKOUT_REF,
             ref: refName,
         };
+    else
+        return {message: ' - podana gałąź nie istnieje.'}
+};
+
+const validateCheckoutWithBranchCommand = (commandWords, refs) => {
+    const refName = commandWords[3];
+    const validName = validateRefName(refName);
+    if (commandWords.length === 4 && !checkIfBranchExists(refs, refName) && validName)
+        return {
+            type: actions.CHECKOUT_REF_B,
+            ref: validName,
+        };
+    return {message: ' - niedozwolona nazwa gałęzi.'};
+};
+
+const checkIfBranchExists = (refs, refName) => {
+    return refs.filter(ref => ref.name === refName).length === 1;
+};
+
+const validateRefName = (refName) => {
+    const name = refName.replace(/\s/g, '');
+    if (name.match(/^[a-zA-Z0-9]+$/) && !name.match(/[hH][eE][aA][dD]/)) {
+        return name.slice(0, 11);
     }
-    return false;
+    return null;
 };
 
 const validateBranchCommand = (commandWords, refs) => {
+    if (commandWords.length === 2) {
+        return {message: refs.filter(ref => ref.name !== 'HEAD').map(ref => `\n  ${ref.name}`)};
+    }
     const refName = commandWords[2];
-    if (commandWords.length === 3 && refs.filter(ref => ref.name === refName).length === 0) {
+    const validName = validateRefName(refName);
+    if (commandWords.length === 3 && !checkIfBranchExists(refs, refName) && validName) {
         return {
             type: actions.ADD_REF,
-            ref: refName,
+            ref: validName,
         };
     }
-    return false;
+    return {message: ' - niedozwolona nazwa gałęzi.'};
 };
-
-// const flagRegExp = new RegExp('-[a-z]+');
