@@ -1,0 +1,30 @@
+#task-completed-modal.show-in {
+    -webkit-animation: scale-up-center 1s ease-in-out both;
+    animation: scale-up-center 1s ease-in-out both;
+}
+
+#task-completed-modal .ui.card.teal {
+    margin-bottom: 0;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.4);
+        transform: scale(0.4);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.4);
+        transform: scale(0.4);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
