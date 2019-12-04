@@ -39,7 +39,7 @@ const SidebarOptionsComponent = (props) => {
 
 const isOptionVisited = (props, option) => {
     return props.visitedOptions
-        .filter(option => option !== props.activeOption && !option.includes('EXERCISE'))
+        .filter(option => option !== props.activeOption)
         .includes(option);
 };
 
