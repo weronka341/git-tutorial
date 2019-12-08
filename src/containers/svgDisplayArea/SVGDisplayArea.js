@@ -22,13 +22,29 @@ class SVGDisplay extends React.Component {
     renderArrows() {
         const {commits, dimensions} = this.props;
         return commits.filter(c => c.index).map((commit, index) =>
-            <SVGArrow key={index}
-                      x2={this.calculateCommitXPosition(commit.parentCommit)}
-                      y2={this.calculateCommitYOffset(commit.parentCommit)}
-                      x1={this.calculateCommitXPosition(commit.index)}
-                      y1={this.calculateCommitYOffset(commit.index)}
-                      positionY={dimensions.commit.positionY}
-            />
+            <React.Fragment key={index}>
+                <SVGArrow key={index + 1000}
+                          x2={this.calculateCommitXPosition(commit.parentCommit)}
+                          y2={this.calculateCommitYOffset(commit.parentCommit)}
+                          x1={this.calculateCommitXPosition(commit.index)}
+                          y1={this.calculateCommitYOffset(commit.index)}
+                          positionY={dimensions.commit.positionY}
+                          level={commit.level}
+                          isMergeCommit={false}
+                          parentLevel={this.findCommit(commit.parentCommit).level}
+                />
+                {commit.isMergeCommit &&
+                <SVGArrow key={index + 2000}
+                          x2={this.calculateCommitXPosition(commit.secondParentCommit)}
+                          y2={this.calculateCommitYOffset(commit.secondParentCommit)}
+                          x1={this.calculateCommitXPosition(commit.index)}
+                          y1={this.calculateCommitYOffset(commit.index)}
+                          positionY={dimensions.commit.positionY}
+                          level={commit.level}
+                          isMergeCommit={true}
+                          parentLevel={this.findCommit(commit.secondParentCommit).level}
+                />}
+            </React.Fragment>
         );
     }
 
@@ -69,9 +85,9 @@ class SVGDisplay extends React.Component {
         return (
             <React.Fragment>
                 <svg className='svg'>
-                        {this.renderCommits()}
-                        {this.renderArrows()}
-                        {this.renderRefs()}
+                    {this.renderCommits()}
+                    {this.renderArrows()}
+                    {this.renderRefs()}
                 </svg>
             </React.Fragment>);
     }

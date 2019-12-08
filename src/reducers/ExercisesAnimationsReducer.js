@@ -1,5 +1,5 @@
 import {actions, exerciseActions} from '../actions/Action';
-import {addCommit, addRef, resizeDimensions, checkoutRef, checkExerciseStatus} from './ActionHandler';
+import {addCommit, addRef, checkoutRef, checkExerciseStatus} from './ActionHandler';
 import {exercisesState, initialAnimationState} from './ExercisesAnimationReducerStates';
 
 const initialExercisesState = {
@@ -13,24 +13,24 @@ export const exerciseAnimationReducer = (state = initialExercisesState, action) 
     switch (action.type) {
         case actions.MOVE_TO_EXERCISE:
             return {
+                ...state,
                 ...exercisesState[action.exerciseName].initial,
                 isExerciseDisplayed: true,
                 activeExercise: action.exerciseName,
             };
         case actions.MOVE_TO_CONTENT:
             return {
-                ...state,
+                ...initialExercisesState,
                 isExerciseDisplayed: false,
                 activeExercise: null,
             };
-        case actions.RESIZE_SVG_CONTENT:
-            return {
-                ...state,
-                dimensions: resizeDimensions(state, -3),
-            };
         case actions.ADD_COMMIT:
             return {
-                ...addCommit(state),
+                ...addCommit(state, false),
+            };
+        case actions.ADD_MERGE_COMMIT:
+            return {
+                ...addCommit(state, true, action.refName),
             };
         case actions.ADD_REF:
             return {

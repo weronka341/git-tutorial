@@ -1,6 +1,8 @@
 .highlight {
     background: var(--teal-background);
     font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 7px;
 }
 
 .italic {
@@ -13,6 +15,9 @@
 
 .name {
     background: var(--yellow-background);
+    padding: 1px 4px;
+    border-radius: 7px;
+    border: 1px solid var(--yellow-background);
 }
 
 .branch-name {
@@ -23,4 +28,12 @@
 .button-container {
     text-align: center;
     margin-top: 9vh;
+}
+
+.inside-command {
+    font-size: 1.3rem;
+    padding: 3px 6px;
+    background-color: #F3F4F5;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 7px;
 }

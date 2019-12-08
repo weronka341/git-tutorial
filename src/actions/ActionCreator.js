@@ -10,13 +10,13 @@ export const performActionOnSidebarOption = (action, optionID) => ({
     optionID,
 });
 
-export const resizeSvgContent = (action, shouldResizeContent) => ({
-    type: action,
-    shouldResizeContent,
-});
-
 export const addCommit = () => ({
     type: actions.ADD_COMMIT,
+});
+
+export const addMergeCommit = (refName) => ({
+    type: actions.ADD_MERGE_COMMIT,
+    refName,
 });
 
 export const refAction = (action, name) => ({

@@ -1,12 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Card, Header, Icon, Menu, Modal, Popup} from 'semantic-ui-react';
-import {moveToContent, moveToExercise, performActionOnSidebarOption, setVisibility} from '../../actions/ActionCreator';
+import {
+    moveToContent,
+    moveToExercise,
+    performActionOnSidebarOption,
+    setVisibility
+} from '../../actions/ActionCreator';
 import {Tip} from '../tip/Tip';
 import {exercisesText} from '../../content/tutorial/ExercisesText';
 import {actions} from '../../actions/Action';
-import './ExerciseHelperMenu.css';
 import {selectNextOption} from '../../containers/tutorialContentContainer/TutorialContentContainer';
+import './ExerciseHelperMenu.css';
 
 export const ExerciseHelper = (props) => {
     return (
