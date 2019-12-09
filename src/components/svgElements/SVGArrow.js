@@ -85,8 +85,8 @@ const renderMergeArrow = (x1, x2, y1, y2, positionY) => {
             </svg>
             }
             {x1 === x2 &&
-            <svg x='0' y={y2 > y1 ? -y2 : -y1}>
-                <line x1={0} y1={25} x2={0} y2={y2 > y1 ? y2 - y1 - 40 : y1 - y2 - 40}
+            <svg x='0' y={-y2}>
+                <line x1={0} y1={y2 > y1 ? y2 - y1 - 25 : y2 - y1 + 25} x2={0} y2={y2 > y1 ? 40 : -40}
                       markerEnd='url(#commitArrow)'
                       className='grey-arrow'
                 />
