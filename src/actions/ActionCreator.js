@@ -19,6 +19,11 @@ export const addMergeCommit = (refName) => ({
     refName,
 });
 
+export const rebase = (refName) => ({
+    type: actions.REBASE,
+    refName,
+});
+
 export const refAction = (action, name) => ({
     type: action,
     name,

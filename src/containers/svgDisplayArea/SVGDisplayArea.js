@@ -7,7 +7,7 @@ import './SVGDisplayArea.css';
 
 class SVGDisplay extends React.Component {
     renderCommits() {
-        const {commits, dimensions} = this.props;
+        const {commits, dimensions, activeExercise} = this.props;
         return commits.map(commit =>
             <SVGCommitElement key={commit.index}
                               cx={this.calculateCommitXPosition(commit.index)}
@@ -15,6 +15,8 @@ class SVGDisplay extends React.Component {
                               positionY={dimensions.commit.positionY}
                               offset={this.calculateCommitYOffset(commit.index)}
                               radius={dimensions.commit.radius}
+                              isRebaseExerciseActive={activeExercise === 'REBASE_EXERCISE'}
+                              color={commit.color}
             />
         );
     }
@@ -31,7 +33,6 @@ class SVGDisplay extends React.Component {
                           positionY={dimensions.commit.positionY}
                           level={commit.level}
                           isMergeCommit={false}
-                          parentLevel={this.findCommit(commit.parentCommit).level}
                 />
                 {commit.isMergeCommit &&
                 <SVGArrow key={index + 2000}
@@ -42,7 +43,6 @@ class SVGDisplay extends React.Component {
                           positionY={dimensions.commit.positionY}
                           level={commit.level}
                           isMergeCommit={true}
-                          parentLevel={this.findCommit(commit.secondParentCommit).level}
                 />}
             </React.Fragment>
         );
@@ -99,6 +99,7 @@ const mapStateToProps = (state) => {
         dimensions: state.animations.dimensions,
         arrows: state.animations.arrows,
         refs: state.animations.refs,
+        activeExercise: state.animations.activeExercise,
     }
 };
 

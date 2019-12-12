@@ -27,9 +27,9 @@ const validateCommandAndPrepareAction = (commandWords, refs, activeRef) => {
         case 'commit':
             return validateCommitCommand(commandWords);
         case 'merge':
-            return validateMergeCommand(commandWords, refs);
+            return validateMergeCommand(commandWords, refs, activeRef);
         case 'rebase':
-            return false;
+            return validateRebaseCommand(commandWords, refs, activeRef);
         case 'checkout':
             return validateCheckoutCommand(commandWords, refs);
         case 'branch':
@@ -123,14 +123,26 @@ const validateBranchCommand = (commandWords, refs, activeRef) => {
     return {message: ' - niedozwolona nazwa gałęzi.'};
 };
 
-const validateMergeCommand = (commandWords, refs) => {
+const validateMergeCommand = (commandWords, refs, activeRef) => {
     if (commandWords.length === 3) {
         const refName = commandWords[2];
-        if (checkIfBranchExists(refs, refName))
+        if (checkIfBranchExists(refs, refName) && refName !== activeRef.name)
             return {
                 type: actions.ADD_MERGE_COMMIT,
                 refName: refName,
             };
     }
-    return {message: ' - niedozwolona nazwa gałęzi.'};
+    return {message: ' - niepoprawna nazwa gałęzi.'};
+};
+
+const validateRebaseCommand = (commandWords, refs, activeRef) => {
+    if (commandWords.length === 3) {
+        const refName = commandWords[2];
+        if (checkIfBranchExists(refs, refName) && refName !== activeRef.name)
+            return {
+                type: actions.REBASE,
+                refName: refName,
+            };
+    }
+    return {message: ' - niepoprawna nazwa gałęzi.'};
 };

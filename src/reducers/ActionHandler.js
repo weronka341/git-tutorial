@@ -1,5 +1,7 @@
 import {commitHashGenerator} from '../utils/CommitHashGenerator';
 
+let colors = ['lime', 'peach', 'pink', 'dark-purple', 'purple', 'green', 'orange', 'yellow', 'teal', 'blue', 'red'];
+
 export const addCommit = (state, isMergeCommit, refName = null) => {
     const {activeRef, commits, refs} = state;
     const parentCommitIndex = activeRef.commit;
@@ -16,6 +18,7 @@ export const addCommit = (state, isMergeCommit, refName = null) => {
         level,
         offset,
         position,
+        color: chooseColor(level, parentCommit, activeRef, refs),
     } : {
         index: commits.length,
         isMergeCommit: true,
@@ -25,6 +28,7 @@ export const addCommit = (state, isMergeCommit, refName = null) => {
         level,
         offset,
         position,
+        color: chooseColor(level, parentCommit, activeRef, refs),
     };
     const updatedActiveRef = {
         ...activeRef,
@@ -68,6 +72,77 @@ export const checkoutRef = (state, name) => {
     };
 };
 
+export const rebase = (state, refName) => {
+        const activeRef = state.activeRef;
+        const refToRebase = state.refs.find(ref => ref.name === refName);
+        let activeRefCommits = [];
+        findAllBranchCommits(state.commits, activeRef.commit, activeRefCommits);
+        let refToRebaseCommits = [];
+        findAllBranchCommits(state.commits, refToRebase.commit, refToRebaseCommits);
+        const baseCommitIndex = activeRefCommits.find(c => refToRebaseCommits.includes(c)).index;
+        let activeRefCommitsToRebase = [];
+        findBranchCommitsToRebase(state.commits, activeRef.commit, activeRefCommitsToRebase, baseCommitIndex);
+        activeRefCommitsToRebase.reverse();
+        const newParentCommit = state.commits.find(c => c.index === refToRebase.commit);
+        const isNewParentAlreadyParent = state.commits.find(c => c.parentCommit === newParentCommit.index) ? 1 : 0;
+        const firstCopiedCommit = activeRefCommitsToRebase && {
+            ...activeRefCommitsToRebase[0],
+            index: state.commits.length,
+            parentCommit: newParentCommit.index,
+            position: newParentCommit.position + 1,
+            level: newParentCommit.level + isNewParentAlreadyParent,
+        };
+        let updatedCommits = [...state.commits];
+        if (activeRefCommitsToRebase) {
+            updatedCommits = activeRefCommitsToRebase.length > 1
+                ? [...disableChosenCommits(state.commits, activeRefCommitsToRebase), firstCopiedCommit, ...activeRefCommitsToRebase.slice(1).map((c, index) => ({
+                    ...c, index: firstCopiedCommit.index + index + 1, position: firstCopiedCommit.position + index + 1,
+                    level: firstCopiedCommit.level, parentCommit: firstCopiedCommit.index + index
+                }))]
+                : [...disableChosenCommits(state.commits, activeRefCommitsToRebase), firstCopiedCommit];
+        }
+        const lastCommitIndex = activeRefCommitsToRebase ? updatedCommits.length - 1 : activeRef.commit;
+        const updatedRefs = state.refs.map(ref => ref.name === activeRef.name || ref.name === 'HEAD'
+            ? {...ref, commit: lastCommitIndex}
+            : ref
+        );
+
+        return {
+            ...state,
+            commits: [...updatedCommits],
+            activeRef: {...state.activeRef, commit: lastCommitIndex},
+            refs: updatedRefs,
+        };
+    }
+;
+
+const disableChosenCommits = (commits, commitsToDisable) => {
+    const commitsToDisableIndexes = commitsToDisable.map(c => c.index);
+    return commits.map(c => commitsToDisableIndexes.includes(c.index) ? {...c, color: 'disabled'} : c);
+};
+
+const findAllBranchCommits = (commits, commitIndex, branchCommits) => {
+    const commit = commits.find(c => c.index === commitIndex);
+    const parentCommitIndex = commit.parentCommit;
+    if (parentCommitIndex !== null) {
+        branchCommits.push(commit);
+        return findAllBranchCommits(commits, parentCommitIndex, branchCommits);
+    } else {
+        branchCommits.push(commit);
+    }
+};
+
+const findBranchCommitsToRebase = (commits, commitIndex, branchCommitsToRebase, baseCommitIndex) => {
+    const commit = commits.find(c => c.index === commitIndex);
+    const parentCommitIndex = commit.parentCommit;
+    if (parentCommitIndex !== baseCommitIndex) {
+        branchCommitsToRebase.push(commit);
+        return findBranchCommitsToRebase(commits, parentCommitIndex, branchCommitsToRebase, baseCommitIndex);
+    } else {
+        branchCommitsToRebase.push(commit);
+    }
+};
+
 const calculateNewCommitLevel = (commits, parentCommitIndex, parentCommitLevel) => {
     const hasSiblings = commits.some(commit => commit.parentCommit === parentCommitIndex);
     const parent = commits.find(commit => commit.index === parentCommitIndex);
@@ -105,6 +180,14 @@ const updateHeadPosition = (refs) => {
     return {...head, position: head.position + 1};
 };
 
+const chooseColor = (level, parentCommit, activeBranch, refs) => {
+    if (level !== parentCommit.level || refs.filter(ref => ref.commit === parentCommit.index).length > 2) {
+        const color = colors.shift();
+        colors.push(color);
+        return color;
+    } else return parentCommit.color;
+};
+
 export const checkExerciseStatus = (state) => {
     const exercise = state.activeExercise;
     switch (exercise) {
@@ -114,6 +197,8 @@ export const checkExerciseStatus = (state) => {
             return checkBranchingExerciseStatus(state);
         case 'MERGE_EXERCISE':
             return checkMergeExerciseStatus(state);
+        case 'REBASE_EXERCISE':
+            return checkRebaseExerciseStatus(state);
         default:
             break;
     }
@@ -124,7 +209,9 @@ const checkCommitExerciseStatus = (state) => {
 };
 
 const checkBranchingExerciseStatus = (state) => {
-    if (state.refs.length === 5 && state.refs.map(ref => ref.name).includes('featureA', 'featureAA', 'featureB')) {
+    const refsNames = state.refs.map(ref => ref.name);
+    if (state.refs.length === 5 && refsNames.includes('featureA')
+        && refsNames.includes('featureAA') && refsNames.includes('featureB')) {
         const correctActiveRef = state.activeRef.name === 'featureB';
         const masterCommit = state.refs.find(ref => ref.name === 'master').commit;
         const featureACommit = state.refs.find(ref => ref.name === 'featureA').commit;
@@ -147,4 +234,25 @@ const checkMergeExerciseStatus = (state) => {
             secondMerge && secondMerge.parentCommit === 4 && secondMerge.secondParentCommit === 11;
     }
     return false;
+};
+
+const checkRebaseExerciseStatus = (state) => {
+    const {commits, refs} = state;
+    if (commits.length === 11) {
+        return checkIfDisabled(commits, 6) &&
+            checkIfDisabled(commits, 1) &&
+            checkIfDisabled(commits, 2) &&
+            checkIfDisabled(commits, 3) &&
+            commits.find(c => c.index === 7).parentCommit === 5 &&
+            commits.find(c => c.index === 8).parentCommit === 7 &&
+            refs.find(ref => ref.name === 'master').commit === 5 &&
+            refs.find(ref => ref.name === 'featureD').commit === 7 &&
+            refs.find(ref => ref.name === 'featureG').commit === 10 &&
+            refs.length === 4;
+    }
+    return false;
+};
+
+const checkIfDisabled = (commits, index) => {
+    return commits.find(c => c.index === index).color === 'disabled';
 };

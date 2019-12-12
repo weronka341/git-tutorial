@@ -82,4 +82,30 @@ export const exercisesText = {
                 <CommandText>$ git merge master</CommandText>
             </React.Fragment>
     },
+    REBASE_EXERCISE: {
+        intro:
+            <p>
+                Kolejne ćwiczenie ma na celu wizualizację operacji <span className='highlight'>rebase</span>.
+            </p>,
+        text:
+            <p>
+                Korzystając z komendy <span className='bold highlight'>git rebase</span> doprowadź do następującego
+                ułożenia commitów: <span className='bold name'>{`a <- b <- c <- d <- e <- f`}</span>. Pamiętaj, że w
+                rzeczywistości <span className='bold highlight'>rebase</span> nie przenosi commitów tylko tworzy
+                zupełnie nowe z identyczną zawartością. Podobnie jak przy operacji <span
+                className='bold highlight'>merge</span> - komenda <span
+                className='bold highlight'>git rebase master</span> wykonana na gałęzi <span
+                className='bold name'>featureA</span> dołączy zmiany z gałęzi <span
+                className='bold name'>master</span> "na" zmiany z <span className='bold name'>featureA</span>,
+                pozostawiając samego <span className='bold name'>mastera</span> bez zmian.
+            </p>,
+        tip:
+            <React.Fragment>
+                <p>Upewnij się, że aktywna gałąź to <span className='bold name'>featureD</span> i wykonaj komendę :</p>
+                <CommandText>$ git rebase master</CommandText>
+                <p>Następnie, po przełączeniu się na gałąź <span className='bold name'>featureG</span> wykonaj:
+                </p>
+                <CommandText>$ git rebase featureD</CommandText>
+            </React.Fragment>
+    },
 };

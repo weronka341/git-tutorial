@@ -10,7 +10,7 @@ export const SVGArrow = (props) => {
 const renderArrow = (x1, x2, y1, y2, positionY, level) => {
     const startArrowPosition = x1 - x2 - 26;
     const curveArrowOrigin = y1 + 42;
-    const pathUp = `m 0 ${y1} l 0 ${-y1 + 62} q 0 -20 20 -20 l 54 0`;
+    const pathUp = `m 0 ${y1 - y2} l 0 ${y2 - y1 + 62} q 0 -20 20 -20 l 54 0`;
     const pathDown = `m 0 ${y1} l 0 ${y1 + 62} q 0 -20 20 -20 l 54 0`;
 
     return (

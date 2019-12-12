@@ -10,6 +10,7 @@ export const initialAnimationState = {
         },
         shift: 100,
     },
+
     activeRef: {
         name: 'master',
         position: 0,
@@ -23,6 +24,7 @@ export const initialAnimationState = {
         parentCommit: null,
         offset: null,
         position: 0,
+        color: 'yellow',
         hash: commitHashGenerator(),
     }],
 
@@ -54,6 +56,7 @@ export const exercisesState = {
                     parentCommit: 0,
                     offset: 0,
                     position: 1,
+                    color: 'yellow',
                     hash: commitHashGenerator()
                 },
                 {
@@ -63,6 +66,7 @@ export const exercisesState = {
                     parentCommit: 1,
                     offset: 0,
                     position: 2,
+                    color: 'yellow',
                     hash: commitHashGenerator()
                 },
             ],
@@ -80,6 +84,7 @@ export const exercisesState = {
                     parentCommit: 0,
                     offset: 0,
                     position: 1,
+                    color: 'blue',
                     hash: commitHashGenerator()
                 },
                 {
@@ -89,6 +94,7 @@ export const exercisesState = {
                     parentCommit: 1,
                     offset: 0,
                     position: 2,
+                    color: 'green',
                     hash: commitHashGenerator()
                 },
                 {
@@ -98,6 +104,7 @@ export const exercisesState = {
                     parentCommit: 2,
                     offset: 0,
                     position: 3,
+                    color: 'green',
                     hash: commitHashGenerator()
                 },
                 {
@@ -107,6 +114,7 @@ export const exercisesState = {
                     parentCommit: 3,
                     offset: 0,
                     position: 4,
+                    color: 'green',
                     hash: commitHashGenerator()
                 },
                 {
@@ -116,6 +124,7 @@ export const exercisesState = {
                     parentCommit: 1,
                     offset: 0,
                     position: 2,
+                    color: 'teal',
                     hash: commitHashGenerator()
                 },
                 {
@@ -125,6 +134,7 @@ export const exercisesState = {
                     parentCommit: 5,
                     offset: 0,
                     position: 3,
+                    color: 'teal',
                     hash: commitHashGenerator()
                 },
                 {
@@ -134,6 +144,7 @@ export const exercisesState = {
                     parentCommit: 6,
                     offset: 0,
                     position: 4,
+                    color: 'teal',
                     hash: commitHashGenerator()
                 },
                 {
@@ -143,6 +154,7 @@ export const exercisesState = {
                     parentCommit: 7,
                     offset: 0,
                     position: 5,
+                    color: 'teal',
                     hash: commitHashGenerator()
                 },
                 {
@@ -152,6 +164,7 @@ export const exercisesState = {
                     parentCommit: 1,
                     offset: 0,
                     position: 2,
+                    color: 'red',
                     hash: commitHashGenerator()
                 },
                 {
@@ -161,6 +174,7 @@ export const exercisesState = {
                     parentCommit: 9,
                     offset: 0,
                     position: 3,
+                    color: 'red',
                     hash: commitHashGenerator()
                 },
             ],
@@ -172,5 +186,88 @@ export const exercisesState = {
             ],
             activeRef: {name: 'featureA', position: 0, commit: 4}
         }
+    },
+    REBASE_EXERCISE: {
+        initial: {
+            commits: [
+                {
+                    index: 0,
+                    level: -1,
+                    isMergeCommit: false,
+                    parentCommit: null,
+                    offset: 0,
+                    position: 0,
+                    color: 'green',
+                    hash: 'a'
+                },
+                {
+                    index: 1,
+                    level: -1,
+                    isMergeCommit: false,
+                    parentCommit: 0,
+                    offset: 0,
+                    position: 1,
+                    color: 'red',
+                    hash: 'e'
+                },
+                {
+                    index: 2,
+                    level: -1,
+                    isMergeCommit: false,
+                    parentCommit: 1,
+                    offset: 0,
+                    position: 2,
+                    color: 'red',
+                    hash: 'f'
+                },
+                {
+                    index: 3,
+                    level: -1,
+                    isMergeCommit: false,
+                    parentCommit: 2,
+                    offset: 0,
+                    position: 3,
+                    color: 'red',
+                    hash: 'g'
+                },
+                {
+                    index: 4,
+                    level: 0,
+                    isMergeCommit: false,
+                    parentCommit: 0,
+                    offset: 0,
+                    position: 1,
+                    color: 'purple',
+                    hash: 'b'
+                },
+                {
+                    index: 5,
+                    level: 0,
+                    isMergeCommit: false,
+                    parentCommit: 4,
+                    offset: 0,
+                    position: 2,
+                    color: 'yellow',
+                    hash: 'c'
+                },
+                {
+                    index: 6,
+                    level: 1,
+                    isMergeCommit: false,
+                    parentCommit: 4,
+                    offset: 0,
+                    position: 2,
+                    color: 'teal',
+                    hash: 'd'
+                },
+            ],
+            refs: [
+                {name: 'HEAD', position: 1, commit: 6},
+                {name: 'master', position: 0, commit: 5},
+                {name: 'featureD', position: 0, commit: 6},
+                {name: 'featureG', position: 0, commit: 3},
+            ],
+            activeRef: {name: 'featureD', position: 0, commit: 6}
+        },
     }
 };

@@ -8,18 +8,74 @@ svg:not(:root) {
 }
 
 circle {
-    fill: var(--yellow-background);
-    stroke: var(--yellow);
     stroke-width: 3px;
 }
 
-rect.orange {
-    fill: var(--orange-background);
-    stroke: var(--orange);
+rect {
     stroke-width: 2px;
 }
 
-marker.orange {
+.yellow {
+    fill: var(--yellow-background);
+    stroke: var(--yellow);
+}
+
+.orange {
+    fill: var(--orange-background);
+    stroke: var(--orange);
+}
+
+.red {
+    fill: var(--red-background);
+    stroke: var(--red);
+}
+
+.purple {
+    fill: var(--purple-background);
+    stroke: var(--purple);
+}
+
+.blue {
+    fill: var(--blue-strong-background);
+    stroke: var(--blue);
+}
+
+.green {
+    fill: var(--green-background);
+    stroke: var(--green);
+}
+
+.disabled {
+    fill: var(--disabled);
+    stroke: var(--disabled);
+}
+
+.teal {
+    fill: var(--teal-background);
+    stroke: var(--teal);
+}
+
+.dark-purple {
+    fill: var(--dark-purple-background);
+    stroke: var(--dark-purple);
+}
+
+.peach {
+    fill: var(--peach-backround);
+    stroke: var(--peach);
+}
+
+.pink {
+    fill: rgba(218, 191, 255, 0.3);
+    stroke: rgb(218, 191, 255);
+}
+
+.lime {
+    fill: var(--lime-background);
+    stroke: var(--lime);
+}
+
+.orange-marker {
     fill: var(--orange);
 }
 
@@ -106,4 +162,9 @@ text {
 .ref-name {
     font-weight: bold;
     font-size: 0.9em;
+}
+
+.rebase {
+    font-size: 1em;
+    font-weight: bold;
 }

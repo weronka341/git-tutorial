@@ -52,6 +52,7 @@ export const renderSelectedTutorialSection = {
     CHERRY_PICKING: <CherryPicking/>,
     GIT_REBASE: <GitRebase/>,
     INTERACTIVE_REBASE: <InteractiveRebase/>,
+    REBASE_EXERCISE: <ExerciseIntroPage name='REBASE_EXERCISE'/>,
     FIXING_MISTAKES: <FixingMistakes/>,
     GIT_REMOTE: <GitRemote/>,
     GIT_FETCH: <GitFetch/>,

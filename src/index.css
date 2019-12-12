@@ -1,33 +1,49 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 #root {
-  height: 100%;
-  box-sizing: border-box;
+    height: 100%;
+    box-sizing: border-box;
     background: #48505e;
 }
 
 :root {
     --light-gray: #48505e;
+    --light-gray-background: rgba(72, 80, 94, 0.8);
+    --disabled: rgba(72, 80, 94, 0.1);
     --console-green: #3ED300;
     --title-icon-color: #DABFFF;
     --yellow: #FBBD08;
     --yellow-background: rgba(251, 189, 8, 0.1);
     --lilac-background: rgba(218, 191, 255, 0.1);
+    --teal: rgba(0, 181, 173);
     --teal-background: rgba(0, 181, 173, 0.1);
     --blue-background: rgba(49, 198, 235, 0.2);
-    --light-gray-background: rgba(72, 80, 94, 0.8);
     --orange: #fb8008;
     --orange-background: rgba(251, 128, 8, 0.3);
+    --red: #ff5c5c;
+    --red-background: rgba(255, 92, 92, 0.2);
+    --green: rgb(116, 191, 84);
+    --green-background: rgba(116, 191, 84, 0.2);
+    --blue: rgb(0, 181, 209);
+    --blue-strong-background: rgba(0, 181, 209, 0.2);
+    --purple: rgb(164, 81, 219);
+    --purple-background: rgba(164, 81, 219, 0.2);
+    --lime: rgb(212, 219, 81);
+    --lime-background: rgba(212, 219, 81, 0.3);
+    --dark-purple: rgb(50, 62, 168);
+    --dark-purple-background: rgba(50, 62, 168, 0.3);
+    --peach: rgb(255, 192, 180);
+    --peach-backround: rgba(255, 192, 180, 0.3);
 }

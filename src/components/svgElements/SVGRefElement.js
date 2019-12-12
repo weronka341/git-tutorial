@@ -17,7 +17,7 @@ export const SVGRefElement = (props) => {
                 <g>
                     <defs>
                         <marker id="refArrow" markerWidth="3" markerHeight="3"
-                                refX="0" refY="1.5" orient="auto" className='orange'>
+                                refX="0" refY="1.5" orient="auto" className='orange-marker'>
                             <polygon points="0 0, 3 1.5, 0 3"/>
                         </marker>
                     </defs>

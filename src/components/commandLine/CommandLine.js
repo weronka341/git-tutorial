@@ -1,7 +1,7 @@
 import React, {createRef} from 'react';
 import {connect} from 'react-redux';
 import {Container, Input} from 'semantic-ui-react';
-import {addCommit, addMergeCommit, checkExerciseStatus, refAction} from '../../actions/ActionCreator';
+import {addCommit, addMergeCommit, checkExerciseStatus, rebase, refAction} from '../../actions/ActionCreator';
 import {actions} from '../../actions/Action';
 import {commandParser} from '../../utils/CommandParser';
 import {animateScroll} from 'react-scroll';
@@ -55,6 +55,9 @@ class CommandLineComponent extends React.Component {
                 break;
             case actions.ADD_MERGE_COMMIT:
                 this.props.addMergeCommit(action.refName);
+                break;
+            case actions.REBASE:
+                this.props.rebase(action.refName);
                 break;
             default:
                 break;
@@ -115,6 +118,7 @@ const mapDispatchToProps = (dispatch) => {
         addCommit: () => dispatch(addCommit()),
         addMergeCommit: (refName) => dispatch(addMergeCommit(refName)),
         addRef: (name) => dispatch(refAction(actions.ADD_REF, name)),
+        rebase: (name) => dispatch(rebase(name)),
         checkoutRef: (name) => dispatch(refAction(actions.CHECKOUT_REF, name)),
         checkExerciseStatus: (activeExercise) => dispatch(checkExerciseStatus(activeExercise)),
     }
