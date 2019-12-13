@@ -1,5 +1,5 @@
 import {actions, exerciseActions} from '../actions/Action';
-import {addCommit, addRef, checkoutRef, checkExerciseStatus, rebase} from './ActionHandler';
+import {addCommit, addRef, checkoutRef, checkExerciseStatus, rebase, reset, pull} from './ActionHandler';
 import {exercisesState, initialAnimationState} from './ExercisesAnimationReducerStates';
 
 const initialExercisesState = {
@@ -43,6 +43,15 @@ export const exerciseAnimationReducer = (state = initialExercisesState, action) 
         case actions.REBASE:
             return {
                 ...rebase(state, action.refName),
+            };
+        case actions.RESET:
+            return {
+                ...reset(state, action.commitsToReset),
+            };
+
+        case actions.PULL:
+            return {
+                ...pull(state),
             };
         case exerciseActions.CHECK_EXERCISE_STATUS:
             return {

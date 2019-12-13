@@ -26,11 +26,15 @@ p {
 #exercise-helper {
     border-radius: 4px;
     width: 98%;
+    display: flex;
     margin: auto;
+    justify-content: space-between;
 }
 
 #exercise-helper p {
     font-size: 1.1em;
+    margin: 0;
+    align-self: center;
 }
 
 #exercise-helper .ui.menu .item {
@@ -49,4 +53,30 @@ p {
 
 #exercise-helper .ui.menu .item:hover {
     background: rgba(72, 80, 94, 0.1);
+}
+
+#origin-display {
+    position: absolute;
+    z-index: 1000;
+    top: 20%;
+    left: 60%;
+    width: 35%;
+}
+
+#origin-display .content:first-child {
+    padding: 10px;
+    border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+    background-color: var(--yellow-background);
+}
+
+#sidebar:after {
+    content: "";
+    height: 3.5vh;
+    display: block;
+}
+
+#sidebar.moved-content:after {
+    content: "";
+    height: 19vh;
+    display: block;
 }

@@ -29,7 +29,7 @@ export const menuOptionsTitles = {
     GIT_FETCH: 'Git fetch',
     GIT_PULL: 'Git pull',
     GIT_PUSH: 'Git push',
-    REMOTE_EXERCISE: 'Ćwiczenie - git remote',
+    PULL_EXERCISE: 'Ćwiczenie - git pull',
     GITHUB: 'GitHub',
     GITIGNORE: 'Plik .gitignore',
 };

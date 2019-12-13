@@ -108,4 +108,38 @@ export const exercisesText = {
                 <CommandText>$ git rebase featureD</CommandText>
             </React.Fragment>
     },
+    RESET_EXERCISE: {
+        intro:
+            <p>
+                W tym ćwiczeniu na prostym przykładzie poćwiczymy cofanie niechcianych zmian za pomocą <span
+                className='bold highlight'>git reset</span> oraz wskazywanie rewizji.
+            </p>,
+        text:
+            <p>
+                Pracujesz lokalnie na branchu <span className='bold name'>master</span>. Zdecydowałeś, że chcesz się
+                pozbyć zmian z ostatnich dwóch commitów. Wykonując operację <span
+                className='bold highlight'>reset</span> cofnij się dwa commity do tyłu. Wskaż wybrany commit za pomocą
+                rewizji. Pamiętaj, że używanie <span className='bold highlight'>git reset</span> to skuteczny sposób na
+                cofanie zmian w Twoim lokalnym repozytorium, natomiast zmiany, które już zostały udostępnione innym
+                członkom zespołu bezpiecznie jest cofnąć za pomocą <span className='bold highlight'>git revert</span>.
+            </p>,
+        tip:
+            <p>Wpisz komendę: <code className='inside-command'>$ git reset HEAD~2</code>.</p>
+
+    },
+    PULL_EXERCISE: {
+        intro:
+            <p>
+                Czas na imitację pracy ze zdalnym repozytorium.
+            </p>,
+        text:
+            <p>
+                Za pomocą operacji <span className='bold highlight'>git pull</span> pobierz nowe zmiany z gałęzi
+                <span className='bold name'>master</span> ze zdalnego repozytorium <span
+                className='bold name'>origin</span>.
+                Zwróć uwagę na identyfikatory commitów.
+            </p>,
+        tip:
+            <p>Wpisz komendę: <code className='inside-command'>$ git pull</code>.</p>
+    },
 };

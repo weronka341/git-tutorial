@@ -6,6 +6,20 @@ import {SVGRefElement} from '../../components/svgElements/SVGRefElement';
 import './SVGDisplayArea.css';
 
 class SVGDisplay extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            width: 0,
+            height: 0,
+        }
+    }
+
+    componentDidMount() {
+        const wrapperWidth = this.svgWrapper.clientWidth;
+        const wrapperHeight = this.svgWrapper.clientHeight;
+        this.setState({width: wrapperWidth, height: wrapperHeight});
+    }
+
     renderCommits() {
         const {commits, dimensions, activeExercise} = this.props;
         return commits.map(commit =>
@@ -83,13 +97,17 @@ class SVGDisplay extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                <svg className='svg'>
+            <div className='svg-wrapper' ref={svgWrapper => {
+                this.svgWrapper = svgWrapper
+            }}>
+                <svg viewBox={`0 0 ${this.state.width} ${this.state.height}`}
+                     className={this.props.isExerciseCompleted ? 'svg finish-exercise' : 'svg'}>
                     {this.renderCommits()}
                     {this.renderArrows()}
                     {this.renderRefs()}
                 </svg>
-            </React.Fragment>);
+            </div>
+        );
     }
 }
 
@@ -100,6 +118,7 @@ const mapStateToProps = (state) => {
         arrows: state.animations.arrows,
         refs: state.animations.refs,
         activeExercise: state.animations.activeExercise,
+        isExerciseCompleted: state.animations.isExerciseCompleted,
     }
 };
 

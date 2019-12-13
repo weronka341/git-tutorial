@@ -1,10 +1,22 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {Icon, Segment, StepTitle, Ref} from 'semantic-ui-react';
-import './TitleBar.css';
+import {Icon, StepTitle, Ref, Container} from 'semantic-ui-react';
 import {setVisibility} from '../../actions/ActionCreator';
 import {actions} from '../../actions/Action';
-import {connect} from 'react-redux';
+import './TitleBar.css';
+
+export const TitleBarComponent = (props) => {
+    return (
+        <Container fluid id='title-bar'>
+            <Icon id='title-icon' name='git'/>
+            <StepTitle id='title'>
+                tutorial
+            </StepTitle>
+            {renderToggleSidebarButton(props)}
+        </Container>
+    );
+};
 
 const renderToggleSidebarButton = (props) => {
     return (
@@ -22,18 +34,6 @@ const renderToggleSidebarButton = (props) => {
                 />
             }
         </React.Fragment>
-    );
-};
-
-export const TitleBarComponent = (props) => {
-    return (
-        <Segment className='title-bar'>
-            <Icon id='title-icon' name='git'/>
-            <StepTitle>
-                tutorial
-            </StepTitle>
-            {renderToggleSidebarButton(props)}
-        </Segment>
     );
 };
 

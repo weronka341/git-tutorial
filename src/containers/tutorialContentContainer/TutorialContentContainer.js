@@ -1,10 +1,11 @@
 import React from 'react'
 import {
+    Card,
     Container,
     Grid,
     GridColumn,
     GridRow,
-    Icon,
+    Icon, Image,
     Rail,
     Segment
 } from 'semantic-ui-react'
@@ -17,6 +18,7 @@ import {menuOptionsTitles} from '../../content/titles/SectionTitles';
 import {SVGDisplayArea} from '../svgDisplayArea/SVGDisplayArea';
 import {exercisesText} from '../../content/tutorial/ExercisesText';
 import {ExerciseHelperMenu} from '../../components/exerciseHelperMenu/ExerciseHelperMenu';
+import originMaster from '../../images/originMaster.png';
 import './TutorialContentContainer.css';
 
 const TutorialContent = (props) => {
@@ -58,18 +60,25 @@ const renderExercise = (props) => {
     return (
         <React.Fragment>
             <Segment tertiary id='exercise-helper'>
-                <Grid verticalAlign='middle' columns={2} centered>
-                    <GridRow>
-                        <GridColumn width={14}>
+
                             {exercisesText[props.activeOption].text}
-                        </GridColumn>
-                        <GridColumn width={2}>
+
                             <ExerciseHelperMenu/>
-                        </GridColumn>
-                    </GridRow>
-                </Grid>
+
             </Segment>
             <SVGDisplayArea/>
+            {props.activeExercise === 'PULL_EXERCISE' &&
+            <Card id='origin-display' color='orange'>
+                <Card.Content>
+                    <Card.Header>origin</Card.Header>
+                </Card.Content>
+                <Card.Content extra>
+                    <Card.Description>
+                        <Image src={originMaster}/>
+                    </Card.Description>
+                </Card.Content>
+            </Card>
+            }
         </React.Fragment>);
 };
 
@@ -110,6 +119,7 @@ const mapStateToProps = (state) => {
         activeOption: state.options.activeOption,
         visitedOptions: state.options.visitedOptions,
         isExerciseDisplayed: state.animations.isExerciseDisplayed,
+        activeExercise: state.animations.activeExercise,
     }
 };
 

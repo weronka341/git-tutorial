@@ -1,7 +1,15 @@
 import React, {createRef} from 'react';
 import {connect} from 'react-redux';
 import {Container, Input} from 'semantic-ui-react';
-import {addCommit, addMergeCommit, checkExerciseStatus, rebase, refAction} from '../../actions/ActionCreator';
+import {
+    addCommit,
+    addMergeCommit,
+    checkExerciseStatus,
+    pull,
+    rebase,
+    refAction,
+    reset
+} from '../../actions/ActionCreator';
 import {actions} from '../../actions/Action';
 import {commandParser} from '../../utils/CommandParser';
 import {animateScroll} from 'react-scroll';
@@ -29,52 +37,71 @@ class CommandLineComponent extends React.Component {
     dispatchAction = () => {
         const command = this.state.value;
         const action = commandParser(command, this.props.refs, this.props.activeRef);
-        switch (action && action.type) {
-            case actions.ADD_COMMIT:
-                this.props.addCommit();
-                break;
-            case actions.ADD_REF:
-                this.props.addRef(action.ref);
-                break;
-            case actions.CHECKOUT_REF:
-                this.props.checkoutRef(action.ref);
-                break;
-            case actions.CHECKOUT_REF_B:
-                this.props.addRef(action.ref);
-                this.props.checkoutRef(action.ref);
-                break;
-            case actions.CREATE_AND_CHECKOUT_REF_FROM_REF:
-                this.props.checkoutRef(action.baseRef);
-                this.props.addRef(action.newRef);
-                this.props.checkoutRef(action.newRef);
-                break;
-            case actions.CREATE_REF_FROM_REF:
-                this.props.checkoutRef(action.baseRef);
-                this.props.addRef(action.newRef);
-                this.props.checkoutRef(action.activeRef);
-                break;
-            case actions.ADD_MERGE_COMMIT:
-                this.props.addMergeCommit(action.refName);
-                break;
-            case actions.REBASE:
-                this.props.rebase(action.refName);
-                break;
-            default:
-                break;
+        if (this.props.activeExercise !== 'PULL_EXERCISE') {
+            switch (action && action.type) {
+                case actions.ADD_COMMIT:
+                    this.props.addCommit();
+                    break;
+                case actions.ADD_REF:
+                    this.props.addRef(action.ref);
+                    break;
+                case actions.CHECKOUT_REF:
+                    this.props.checkoutRef(action.ref);
+                    break;
+                case actions.CHECKOUT_REF_B:
+                    this.props.addRef(action.ref);
+                    this.props.checkoutRef(action.ref);
+                    break;
+                case actions.CREATE_AND_CHECKOUT_REF_FROM_REF:
+                    this.props.checkoutRef(action.baseRef);
+                    this.props.addRef(action.newRef);
+                    this.props.checkoutRef(action.newRef);
+                    break;
+                case actions.CREATE_REF_FROM_REF:
+                    this.props.checkoutRef(action.baseRef);
+                    this.props.addRef(action.newRef);
+                    this.props.checkoutRef(action.activeRef);
+                    break;
+                case actions.ADD_MERGE_COMMIT:
+                    this.props.addMergeCommit(action.refName);
+                    break;
+                case actions.REBASE:
+                    this.props.rebase(action.refName);
+                    break;
+                case actions.RESET:
+                    this.props.reset(action.commitsToReset);
+                    break;
+                default:
+                    break;
+            }
+            action.type === actions.PULL
+                ? this.addCommandTextToDisplay(command, {message: ' - nie masz połączenia ze zdalnym repozytorium.'})
+                : this.addCommandTextToDisplay(command, action);
+
+        } else if (action && action.type && action.type === actions.PULL) {
+            this.props.pull();
+            this.addCommandTextToDisplay(command, action);
+        } else {
+            action && action.message
+                ? this.addCommandTextToDisplay(command, action)
+                : this.addCommandTextToDisplay(command, {message: ' - ta komenda nie jest obsługiwana w tym ćwiczeniu.'})
         }
-        this.addCommandTextToDisplay(command, action);
-        setTimeout(() => this.props.checkExerciseStatus(this.props.activeExercise), 2000);
+        this.props.checkExerciseStatus(this.props.activeExercise);
     };
 
     addCommandTextToDisplay = (command, action) => {
-        const {consoleDisplayText} = this.state;
         const text = action && action.message
             ? command + action.message
             : command;
-        const updatedConsoleDisplayText = consoleDisplayText.length > 10
+        const updatedConsoleDisplayText = this.addTextToDisplay(text);
+        this.setState({value: '', consoleDisplayText: updatedConsoleDisplayText});
+    };
+
+    addTextToDisplay = (text) => {
+        const {consoleDisplayText} = this.state;
+        return consoleDisplayText.length > 10
             ? [...consoleDisplayText.slice(1), text]
             : [...consoleDisplayText, text];
-        this.setState({value: '', consoleDisplayText: updatedConsoleDisplayText});
     };
 
     scrollToBottom = () => {
@@ -119,6 +146,8 @@ const mapDispatchToProps = (dispatch) => {
         addMergeCommit: (refName) => dispatch(addMergeCommit(refName)),
         addRef: (name) => dispatch(refAction(actions.ADD_REF, name)),
         rebase: (name) => dispatch(rebase(name)),
+        reset: (commitsNumber) => dispatch(reset(commitsNumber)),
+        pull: () => dispatch(pull()),
         checkoutRef: (name) => dispatch(refAction(actions.CHECKOUT_REF, name)),
         checkExerciseStatus: (activeExercise) => dispatch(checkExerciseStatus(activeExercise)),
     }

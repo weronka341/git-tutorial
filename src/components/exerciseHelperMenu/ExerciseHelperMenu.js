@@ -45,6 +45,7 @@ export const ExerciseHelper = (props) => {
             </Menu.Item>
             <Modal id='task-completed-modal'
                    className='show-in'
+                   centered={false}
                    open={props.isExerciseCompleted}
                    onClose={() => {
                        handleCompleteExercise(props)

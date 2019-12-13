@@ -11,16 +11,6 @@
     margin: 0 3px 0 3px;
 }
 
-.ui.segment.title-bar {
-    height: 7.5vh;
-    font-size: 1.5em;
-    display: flex;
-    padding: 1.5rem;
-    background: var(--light-gray);
-    color: white;
-    margin: 0;
-}
-
 .ui.tertiary.segment {
     color: var(--light-gray);
     background: var(--yellow-background);

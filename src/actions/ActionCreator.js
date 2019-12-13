@@ -24,6 +24,15 @@ export const rebase = (refName) => ({
     refName,
 });
 
+export const reset = (commitsToReset) => ({
+    type: actions.RESET,
+    commitsToReset,
+});
+
+export const pull = () => ({
+    type: actions.PULL,
+});
+
 export const refAction = (action, name) => ({
     type: action,
     name,

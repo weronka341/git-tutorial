@@ -12,10 +12,15 @@
     font-size: 2rem;
     margin-right: 10px;
     margin-left: auto;
+    align-self: center;
+    height: auto;
 }
 
 .icon.toggle-menu-icon.visible {
+    align-self: center;
     display: inherit;
+    height: auto;
+    text-shadow: 2px 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .icon.toggle-menu-icon.hidden {

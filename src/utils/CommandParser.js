@@ -6,6 +6,8 @@ const allowedCommands = [
     'rebase',
     'checkout',
     'branch',
+    'reset',
+    'pull',
 ];
 
 const commandNotSupportedMessage = ' - przepraszamy, ta komenda nie jest obsługiwana.';
@@ -34,6 +36,10 @@ const validateCommandAndPrepareAction = (commandWords, refs, activeRef) => {
             return validateCheckoutCommand(commandWords, refs);
         case 'branch':
             return validateBranchCommand(commandWords, refs, activeRef);
+        case 'reset':
+            return validateResetCommand(commandWords);
+        case 'pull':
+            return validatePullCommand(commandWords);
         default:
             return false;
     }
@@ -132,7 +138,7 @@ const validateMergeCommand = (commandWords, refs, activeRef) => {
                 refName: refName,
             };
     }
-    return {message: ' - niepoprawna nazwa gałęzi.'};
+    return {message: ' - niedozwolona nazwa gałęzi.'};
 };
 
 const validateRebaseCommand = (commandWords, refs, activeRef) => {
@@ -144,5 +150,27 @@ const validateRebaseCommand = (commandWords, refs, activeRef) => {
                 refName: refName,
             };
     }
-    return {message: ' - niepoprawna nazwa gałęzi.'};
+    return {message: ' - niedozwolona nazwa gałęzi.'};
 };
+
+const validateResetCommand = (commandWords) => {
+    if (commandWords.length === 3) {
+        const match = /^HEAD~([1-4])$/g.exec(commandWords[2]);
+        if (match && match[1])
+            return {
+                type: actions.RESET,
+                commitsToReset: match[1],
+            };
+    }
+    return {message: ' - niepoprawne wskazanie rewizji.'};
+};
+
+const validatePullCommand = (commandWords) => {
+    if (commandWords.length === 2) {
+        return {
+            type: actions.PULL,
+        };
+    }
+    return {message: ' - wystarczy git pull :P'};
+};
+

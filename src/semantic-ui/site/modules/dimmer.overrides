@@ -2,6 +2,6 @@
         User Overrides
 *******************************/
 .ui.dimmer {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.25);
     transition: background-color 1s ease;
 }

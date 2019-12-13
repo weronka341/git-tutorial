@@ -8,17 +8,17 @@ import {SidebarOptions} from '../components/sidebarOptions/SidebarOptions';
 
 const SidebarWrapperComponent = (props) => {
     return (
-        <Sidebar
-            as={Menu}
-            className={props.isBottomBarVisible ? 'moved-content' : ''}
-            animation='overlay'
-            direction='right'
-            icon='labeled'
-            inverted
-            onHide={() => props.onHide(false)}
-            target={props.toggleSidebarRef}
-            vertical
-            visible={props.isSidebarVisible}
+        <Sidebar id='sidebar'
+                 as={Menu}
+                 className={props.isBottomBarVisible ? 'moved-content' : ''}
+                 animation='overlay'
+                 direction='right'
+                 icon='labeled'
+                 inverted
+                 onHide={() => props.onHide(false)}
+                 target={props.toggleSidebarRef}
+                 vertical
+                 visible={props.isSidebarVisible}
         >
             <SidebarOptions/>
         </Sidebar>
