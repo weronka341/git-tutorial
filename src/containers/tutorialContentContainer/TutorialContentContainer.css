@@ -35,6 +35,8 @@ p {
     font-size: 1.1em;
     margin: 0;
     align-self: center;
+    text-align: justify;
+    padding-right: 15px;
 }
 
 #exercise-helper .ui.menu .item {
@@ -44,6 +46,12 @@ p {
 
 #exercise-helper .ui.menu .item > i.icon {
     margin: 0;
+}
+
+#exercise-helper .ui.compact.menu {
+    margin: 0;
+    align-self: center;
+    height: auto;
 }
 
 #exercise-helper .ui.grid > .row {

@@ -2,10 +2,8 @@ import React from 'react'
 import {
     Card,
     Container,
-    Grid,
-    GridColumn,
-    GridRow,
-    Icon, Image,
+    Icon,
+    Image,
     Rail,
     Segment
 } from 'semantic-ui-react'
@@ -60,11 +58,8 @@ const renderExercise = (props) => {
     return (
         <React.Fragment>
             <Segment tertiary id='exercise-helper'>
-
-                            {exercisesText[props.activeOption].text}
-
-                            <ExerciseHelperMenu/>
-
+                {exercisesText[props.activeOption].text}
+                <ExerciseHelperMenu/>
             </Segment>
             <SVGDisplayArea/>
             {props.activeExercise === 'PULL_EXERCISE' &&
