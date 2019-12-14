@@ -1,7 +1,8 @@
 import React from 'react';
-import {Divider, Header} from 'semantic-ui-react';
+import {Container, Divider, Header, Segment} from 'semantic-ui-react';
 import {fullTitles} from '../titles/SectionTitles';
 import './TutorialTextStyle.css';
+import {FolderListing} from '../../components/folderListing/FolderListing';
 
 export const HowGitWorks = () => {
     return (
@@ -36,7 +37,16 @@ export const HowGitWorks = () => {
                 Miejscem, w którym znajdują się dane przechowywane i zarządzane przez Gita, jest
                 specjalny, ukryty katalog&nbsp;<span className='highlight'>.git</span>.
                 W podkatalogu <span className='highlight'>.git/objects</span> znajdziemy wszystkie aktualnie
-                przechowywane przez Gita obiekty.
+                przechowywane przez Gita obiekty:
+            </p>
+            <Container fluid style={{paddingBottom: '15px'}}>
+                <Segment secondary>
+                    <FolderListing/>
+                </Segment>
+            </Container>
+            <p>
+                Na czerwono zostały wyróżnione obiekty (drzewa, bloby, commity) - identyfikowane za pomocą ciągu znaków
+                i przechowywane w osobnych folderach.
             </p>
         </React.Fragment>
     );

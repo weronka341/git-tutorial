@@ -1,6 +1,7 @@
 import React from 'react';
-import {Divider, Header} from 'semantic-ui-react';
+import {Divider, Header, Image} from 'semantic-ui-react';
 import {fullTitles} from '../titles/SectionTitles';
+import workflow from '../../images/workflow.svg';
 import './TutorialTextStyle.css';
 
 export const GitWorkflow = () => {
@@ -57,6 +58,7 @@ export const GitWorkflow = () => {
                 odpowiednimi komendami, z pomocą których możemy się między nimi przemieszczać.
                 Każda z komend będzie dokładnie omówiona już za chwilę.
             </p>
+            <Image centered style={{width: '70%'}} src={workflow}/>
         </React.Fragment>
     );
 };

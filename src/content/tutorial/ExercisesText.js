@@ -117,7 +117,7 @@ export const exercisesText = {
             </p>,
         text:
             <p>
-                Pracujesz lokalnie na branchu <span className='bold name'>master</span>. Zdecydowałeś, że chcesz się
+                Pracujesz lokalnie na gałęzi <span className='bold name'>master</span>. Zdecydowałeś, że chcesz się
                 pozbyć zmian z ostatnich dwóch commitów. Wykonując operację <span
                 className='bold highlight'>reset</span> cofnij się dwa commity do tyłu. Wskaż wybrany commit za pomocą
                 rewizji. Pamiętaj, że używanie <span className='bold highlight'>git reset</span> to skuteczny sposób na

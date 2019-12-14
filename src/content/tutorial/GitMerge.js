@@ -1,9 +1,11 @@
 import React from 'react';
-import {Divider, Header} from 'semantic-ui-react';
+import {Divider, Header, Image, ImageGroup} from 'semantic-ui-react';
 import {fullTitles} from '../titles/SectionTitles';
 import './TutorialTextStyle.css';
 import {CommandText} from '../../components/commandText/CommandText';
 import {Tip} from '../../components/tip/Tip';
+import merge1 from '../../images/merge1.svg';
+import merge2 from '../../images/merge2.svg';
 
 export const GitMerge = () => {
     return (
@@ -51,6 +53,10 @@ export const GitMerge = () => {
             <CommandText>
                 <span className='branch-name'>(master)</span>&nbsp;&nbsp;$ git merge feature
             </CommandText>
+            <ImageGroup size='large' style={{padding: '15px 0'}}>
+                <Image src={merge1}/>
+                <Image src={merge2}/>
+            </ImageGroup>
             <p>
                 Pokazany wyżej przykład dołącza zmiany wprowadzone na gałęzi feature do gałęzi master.
             </p>

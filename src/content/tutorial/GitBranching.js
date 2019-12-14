@@ -1,9 +1,11 @@
 import React from 'react';
-import {Divider, Header} from 'semantic-ui-react';
+import {Divider, Header, Image} from 'semantic-ui-react';
 import {fullTitles} from '../titles/SectionTitles';
 import './TutorialTextStyle.css';
 import {CommandText} from '../../components/commandText/CommandText';
 import {Tip} from '../../components/tip/Tip';
+import branching from '../../images/branching.svg';
+import branching2 from '../../images/branching2.svg';
 
 export const GitBranching = () => {
     return (
@@ -25,6 +27,7 @@ export const GitBranching = () => {
                 na której od teraz dostępna jest nowa, wprowadzona przez Ciebie funkcjonalność. Najlepiej zilustruje to
                 przykład na obrazku:
             </p>
+            <Image centered style={{width: '70%'}} src={branching}/>
             <p>
                 Jak widać, gałąź to nie osobna kopia plików projektu, lecz najzwyczajniej seria commitów. Nasza gałąź
                 domyślnie wskazuje na ostatni z nich. Dzięki temu przełączanie się pomiędzy gałęziami to w Gicie szybka
@@ -35,6 +38,7 @@ export const GitBranching = () => {
             <p>
                 Oczywiście gałąź możesz stworzyć także z dowolnej innej gałęzi – niekoniecznie master.
             </p>
+            <Image centered style={{width: '70%'}} src={branching2}/>
             <p>
                 Zanim przejdziemy do ćwiczeń, poznasz kilka przydatnych przy rozgałęzianiu projektu komend:
             </p>

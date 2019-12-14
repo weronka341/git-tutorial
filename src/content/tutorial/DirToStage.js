@@ -51,6 +51,9 @@ export const DirToStage = () => {
             <p>
                 Służy do przeniesienia lub zmiany nazwy pliku.
             </p>
+            <p> Zmiany można również przenieść z przechowalni do katalogu roboczego, nadpisując lokalnie zmodyfikowane
+                pliki. Służy do tego polecenie:</p>
+            <CommandText>$ git checkout plik.js</CommandText>
             <Tip title='TIP'>
                 <p>
                     Stan plików (<span className='italic'>untracked/modified/staged</span>) możesz weryfikować za pomocą

@@ -3,6 +3,7 @@ import {Divider, Header} from 'semantic-ui-react';
 import {fullTitles} from '../titles/SectionTitles';
 import './TutorialTextStyle.css';
 import {CommandText} from '../../components/commandText/CommandText';
+import {Tip} from '../../components/tip/Tip';
 
 export const StageToRepo = () => {
     return (
@@ -61,6 +62,30 @@ export const StageToRepo = () => {
             <p>
                 będziemy mieli możliwość dodać zmiany do poprzedniego commita zamiast tworzyć nowego.
             </p>
+            <Tip title='TIP'>
+                <p>
+                    Przy poruszaniu się pomiędzy przechowalnią a repozytorium przydatna jest również komenda:
+                </p>
+                <CommandText> $ git reset plik.js</CommandText>
+                <p>
+                    Nadpisuje ona zawartość pliku w przechowalni jego zawartością w repozytorium. (Operacja przeciwna
+                    do <span className='bold'> git add</span>).
+                </p>
+            </Tip>
+            <Tip title='TIP'>
+                <p>
+                    Można również poruszać się bezpośrednio między katalogiem roboczym a repozytorium.
+                </p>
+                <CommandText> $ git commit -a plik.js</CommandText>
+                <p>
+                    Komenda jest równoznaczna z wykonaniem najpierw <span className='bold'> git add</span> a
+                    następnie <span className='bold'>git commit</span>.
+                </p>
+                <CommandText> $ git checkout HEAD plik.js</CommandText>
+                <p>
+                    Nadpisuje zawartość pliku w przechowalni oraz w katalogu roboczym jego zawartością w repozytorium.
+                </p>
+            </Tip>
         </React.Fragment>
     );
 };
