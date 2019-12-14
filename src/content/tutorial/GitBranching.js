@@ -19,8 +19,9 @@ export const GitBranching = () => {
                 to możliwe bez gałęzi. <span className='highlight'>Gałąź </span>
                 (ang. <span className='italic'>branch</span>) to w rzeczywistości wskaźnik na konkretny commit. Używa
                 się ich, aby w bezinwazyjny sposób odseparować od siebie prace nad różnymi funkcjonalnościami. W ten
-                sposób możesz pracować nad swoją częścią, a główna gałąź projektu, czyli tzw. master, pozostaje
-                stabilna. Gdy skończysz, scalasz swoją gałąź z gałęzią <span className='highlight'>master</span>,
+                sposób możesz pracować nad swoją częścią, a główna gałąź projektu, czyli tzw. <span
+                className='highlight'>master</span>, pozostaje stabilna.
+                Gdy skończysz, scalasz swoją gałąź z gałęzią <span className='highlight'>master</span>,
                 na której od teraz dostępna jest nowa, wprowadzona przez Ciebie funkcjonalność. Najlepiej zilustruje to
                 przykład na obrazku:
             </p>

@@ -90,7 +90,8 @@ export const exercisesText = {
         text:
             <p>
                 Korzystając z komendy <span className='bold highlight'>git rebase</span> doprowadź do następującego
-                ułożenia commitów: <span className='bold name'>{`a <- b <- c <- d <- e <- f`}</span>. Pamiętaj, że w
+                ułożenia commitów: <span className='bold name'>{`a <- b <- c <- d <- e <- f <- g`}</span>. Pamiętaj, że
+                w
                 rzeczywistości <span className='bold highlight'>rebase</span> nie przenosi commitów tylko tworzy
                 zupełnie nowe z identyczną zawartością. Podobnie jak przy operacji <span
                 className='bold highlight'>merge</span> - komenda <span

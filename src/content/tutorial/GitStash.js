@@ -16,7 +16,7 @@ export const GitStash = () => {
             <p>
                 Czasami zdarza się, że musimy przerwać pracę nad daną funkcjonalnością i zająć się zupełnie inną częścią
                 projektu. W takim wypadku nie musimy w pośpiechu commitować niegotowego jeszcze rozwiązania ani martwić
-                się, że nasza praca praca przepadnie. Za pomocą <span className='highlight'>git stash</span> możemy
+                się, że nasza praca przepadnie. Za pomocą <span className='highlight'>git stash</span> możemy
                 tymczasowo przechować dokonane w katalogu roboczym zmiany (również te nieśledzone przez Gita) i później
                 ponownie je przywrócić.
             </p>

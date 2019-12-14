@@ -56,10 +56,12 @@ export const GitMerge = () => {
             </p>
             <Tip title='TIP'>
                 <p>
-                    Jeśli dodasz kilka commitów na swojej gałęzi feature i chcesz ją złączyć z gałęzią master, na której
+                    Jeśli dodasz kilka commitów na swojej gałęzi <span className='bold'>feature</span> i chcesz ją
+                    złączyć z gałęzią <span className='bold'>master</span>, na której
                     od czasu rozgałęzienia nie było żadnych zmian, to dostaniesz komunikat o&nbsp;
                     <span className='bold'>fast-forward-merge</span>. Oznacza to, że jesteś „do przodu” z historią
-                    commitów i zamiast łączenia, master po prostu przesunie się na ostatni commit z feature.
+                    commitów i zamiast łączenia, <span className='bold'>master</span> po prostu przesunie się na ostatni
+                    commit z <span className='bold'>feature</span>.
                 </p>
                 <p>
                     Jeśli jednak zależy Ci na tym, by dokładnie znać historię commitów, możesz „zmusić” Gita do
