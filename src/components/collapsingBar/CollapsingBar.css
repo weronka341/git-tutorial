@@ -1,5 +1,6 @@
 .collapsing-bar {
-    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
     font-size: 1.5em;
     height: 3vh;
 }

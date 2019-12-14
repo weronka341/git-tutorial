@@ -1,6 +1,6 @@
 .highlight {
     background: var(--teal-background);
-    font-weight: bold;
+    font-weight: 500;
     padding: 1px 4px;
     border-radius: 7px;
 }
@@ -10,7 +10,7 @@
 }
 
 .bold {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .name {
