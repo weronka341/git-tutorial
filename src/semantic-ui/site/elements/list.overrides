@@ -1,3 +1,7 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+.ui.list .list > .item .header.red, .ui.list > .item .header.red {
+    color: #eb4034;
+}
