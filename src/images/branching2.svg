@@ -1,0 +1,164 @@
+<svg width="600" height="280" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+    <defs>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_2">
+            <path stroke-width="10" stroke="#48505ecc" fill="#48505ecc" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_1"/>
+        </marker>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_16">
+            <path stroke-width="10" stroke="#48505ecc" fill="#48505ecc" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_2"/>
+        </marker>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_19">
+            <path stroke-width="10" stroke="#48505ecc" fill="#48505ecc" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_5"/>
+        </marker>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_22">
+            <path stroke-width="10" stroke="#48505ecc" fill="#48505ecc" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_6"/>
+        </marker>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_25">
+            <path stroke-width="10" stroke="#48505ecc" fill="#48505ecc" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_8"/>
+        </marker>
+        <pattern id="gridpattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+            <image id="svg_9" x="0" y="0" width="100" height="100"/>
+        </pattern>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_27">
+            <path stroke-width="10" stroke="#fb8008" fill="#fb8008" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_33"/>
+        </marker>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_37">
+            <path stroke-width="10" stroke="#fb8008" fill="#fb8008" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_38"/>
+        </marker>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_43">
+            <path stroke-width="10" stroke="#48505e" fill="#48505e" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_50"/>
+        </marker>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_47">
+            <path stroke-width="10" stroke="#48505e" fill="#48505e" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_51"/>
+        </marker>
+        <marker id="se_marker_end_svg_46" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_34" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#fb8008" stroke="#fb8008"
+                  stroke-width="10"/>
+        </marker>
+    </defs>
+    <g>
+        <title>Layer 1</title>
+        <rect stroke-width="2" stroke="#fb8008" fill-opacity="0.3" fill="#fb8008" id="svg_10" class="orange scale-up"
+              ry="7" rx="7" width="66" height="20" y="112.0647" x="106.46338"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" font-weight="bold" fill="black" id="svg_11" class="scale-up ref-name" text-anchor="middle"
+              y="136.30042" x="150.51666"
+              transform="matrix(1.0494590997695923,0,0,1.0908230543136597,-17.75040722824633,-23.037835370749235) ">HEAD
+        </text>
+        <circle id="svg_4" class="yellow scale-up" cy="195.5" cx="444.5" r="24" fill="#fbbd08" fill-opacity="0.1"
+                stroke="#fbbd08" stroke-width="3"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_3" class="scale-up" text-anchor="middle" y="199.25" x="446.25" fill="black">
+            ftjgb...
+        </text>
+        <path id="svg_7" stroke="#48505e" marker-end="url(#se_marker_end_svg_2)" d="m519.25,195l-40,0"
+              stroke-dasharray="null" stroke-width="3" fill="null"/>
+        <circle id="svg_14" class="yellow scale-up" cy="197.20001" cx="545.625" r="24" fill="#fbbd08" fill-opacity="0.1"
+                stroke="#fbbd08" stroke-width="3"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_15" class="scale-up" text-anchor="middle" y="200.95001" x="547.375" fill="black">
+            b5Y7...
+        </text>
+        <path id="svg_16" stroke="#48505e" marker-end="url(#se_marker_end_svg_16)" d="m418.375,196.70001l-40,0"
+              stroke-dasharray="null" stroke-width="3" fill="null"/>
+        <circle id="svg_17" class="yellow scale-up" cy="194.20001" cx="40.625" r="24" fill="#fbbd08" fill-opacity="0.1"
+                stroke="#fbbd08" stroke-width="3"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_18" class="scale-up" text-anchor="middle" y="197.95001" x="42.375" fill="black">
+            q2plg...
+        </text>
+        <path id="svg_19" stroke="#48505e" marker-end="url(#se_marker_end_svg_19)" d="m115.375,193.70001l-40,0"
+              stroke-dasharray="null" stroke-width="3" fill="null"/>
+        <circle id="svg_20" class="yellow scale-up" cy="193.20001" cx="139.625" r="24" fill="#fbbd08" fill-opacity="0.1"
+                stroke="#fbbd08" stroke-width="3"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_21" class="scale-up" text-anchor="middle" y="196.95001" x="141.375" fill="black">
+            i0Mnj...
+        </text>
+        <path id="svg_22" stroke="#48505e" marker-end="url(#se_marker_end_svg_22)" d="m214.375,192.70001l-40,0"
+              stroke-dasharray="null" stroke-width="3" fill="null"/>
+        <circle id="svg_23" class="yellow scale-up" cy="192.20001" cx="239.625" r="24" fill="#00b5ad" fill-opacity="0.1"
+                stroke="#00b5ad" stroke-width="3"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_24" class="scale-up" text-anchor="middle" y="195.95001" x="239.875" fill="black">
+            c8opg...
+        </text>
+        <rect id="svg_12" stroke-width="2" stroke="#fb8008" fill-opacity="0.3" fill="#fb8008" class="orange scale-up"
+              ry="7" rx="7" width="66" height="20" y="132.26379" x="106.46338"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_13" font-weight="bold" fill="black" class="scale-up ref-name" text-anchor="middle"
+              y="145.36469" x="141.31336">master
+        </text>
+        <rect fill="black" stroke-width="2" stroke-dasharray="null" x="96.84995" y="74.35" width="0.75" height="0"
+              id="svg_26"/>
+        <path stroke="#fb8008" marker-end="url(#se_marker_end_svg_27)" id="svg_27"
+              d="m140.34232,151.68199l-0.05631,9.08622" stroke-width="2" fill="none"/>
+        <circle id="svg_28" class="yellow scale-up" cy="193.69998" cx="340.80002" r="24" fill="#00b5ad"
+                fill-opacity="0.1" stroke="#00b5ad" stroke-width="3"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_29" class="scale-up" text-anchor="middle" y="197.44998" x="343.30002" fill="black">
+            a2qw4...
+        </text>
+        <path id="svg_32" stroke="#48505e" marker-end="url(#se_marker_end_svg_25)" d="m315.17502,193.94998l-40,0"
+              stroke-dasharray="null" stroke-width="3" fill="null"/>
+        <rect id="svg_35" stroke-width="2" stroke="#fb8008" fill-opacity="0.3" fill="#fb8008" class="orange scale-up"
+              ry="7" rx="7" width="66" height="20" y="133.59735" x="306.14996"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_36" font-weight="bold" fill="black" class="scale-up ref-name" text-anchor="middle"
+              y="146.69824" x="339.49994">featureA
+        </text>
+        <path marker-end="url(#se_marker_end_svg_37)" stroke="#fb8008" id="svg_37"
+              d="m340.0289,153.01555l-0.05631,9.08621" stroke-width="2" fill="none"/>
+        <circle id="svg_39" class="yellow scale-up" cy="104.02628" cx="544.43756" r="24" fill="#74bf54"
+                fill-opacity="0.3" stroke="#74bf54" stroke-width="3"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_40" class="scale-up" text-anchor="middle" y="107.77628" x="545.43756" fill="black">
+            lt0Kj...
+        </text>
+        <circle id="svg_41" class="yellow scale-up" cy="104.77628" cx="444.06256" r="24" fill="#74bf54"
+                fill-opacity="0.3" stroke="#74bf54" stroke-width="3"/>
+        <path id="svg_43" stroke="#48505e" marker-end="url(#se_marker_end_svg_43)" d="m518.81256,104.27628l-40,0"
+              stroke-dasharray="null" stroke-width="3" fill="null"/>
+        <rect id="svg_44" stroke-width="2" stroke="#fb8008" fill-opacity="0.3" fill="#fb8008" class="orange scale-up"
+              ry="7" rx="7" width="66" height="20" y="43.50178" x="510.20938"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" style="cursor: move;" id="svg_45" font-weight="bold" fill="black" class="scale-up ref-name"
+              text-anchor="middle" y="56.60267" x="543.80936">featureAB
+        </text>
+        <path id="svg_46" stroke="#fb8008" d="m543.80438,63.96222l-0.05631,9.08621" stroke-width="2" fill="none"
+              marker-end="url(#se_marker_end_svg_46)"/>
+        <path marker-end="url(#se_marker_end_svg_47)" id="svg_47" d="m426.80328,123.68184l-54,46.5"
+              stroke-dasharray="null" stroke-width="3" stroke="#48505e" fill="#ffff56"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" class="scale-up" text-anchor="middle" y="108.05909" x="445.30316" fill="black" id="svg_52">
+            dFr4a...
+        </text>
+        <rect id="svg_49" stroke-width="2" stroke="#fb8008" fill-opacity="0.3" fill="#fb8008" class="orange scale-up"
+              ry="7" rx="7" width="66" height="20" y="136.47668" x="513.45001"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" style="cursor: move;" id="svg_53" font-weight="bold" fill="black" class="scale-up ref-name"
+              text-anchor="middle" y="148.82757" x="546.29999">featureAA
+        </text>
+        <path id="svg_54" stroke="#fb8008" d="m547.04501,156.93712l-0.05631,9.08621" stroke-width="2" fill="none"
+              marker-end="url(#se_marker_end_svg_46)"/>
+    </g>
+</svg>

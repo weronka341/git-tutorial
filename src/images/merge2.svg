@@ -1,0 +1,107 @@
+<svg width="480" height="210" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+    <defs>
+        <marker id="se_marker_end_svg_19" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_5" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#48505ecc" stroke="#48505ecc"
+                  stroke-width="10"/>
+        </marker>
+        <pattern height="100" width="100" y="0" x="0" patternUnits="userSpaceOnUse" id="gridpattern">
+            <image height="100" width="100" y="0" x="0" id="svg_9"/>
+        </pattern>
+        <marker id="se_marker_end_svg_27" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_33" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#fb8008" stroke="#fb8008"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_end_svg_47" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_51" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#48505e" stroke="#48505e"
+                  stroke-width="10"/>
+        </marker>
+        <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto"
+                markerUnits="strokeWidth" id="se_marker_end_svg_46">
+            <path stroke-width="10" stroke="#fb8008" fill="#fb8008" d="m100,50l-100,40l30,-40l-30,-40l100,40z"
+                  id="svg_34"/>
+        </marker>
+    </defs>
+    <g>
+        <title>Layer 1</title>
+        <rect x="306.32668" y="98.09009" height="20" width="66" rx="7" ry="7" class="orange scale-up" id="svg_10"
+              fill="#fb8008" fill-opacity="0.3" stroke="#fb8008" stroke-width="2"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" x="339.69245" y="112.20081" text-anchor="middle" class="scale-up ref-name" id="svg_11"
+              fill="black" font-weight="bold">HEAD
+        </text>
+        <circle stroke-width="3" stroke="#fbbd08" fill-opacity="0.1" fill="#fbbd08" r="24" cx="43.71875" cy="180.98126"
+                class="yellow scale-up" id="svg_17"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" fill="black" x="45.46875" y="184.73126" text-anchor="middle" class="scale-up" id="svg_18">
+            q2plg...
+        </text>
+        <path fill="null" stroke-width="3" stroke-dasharray="null" d="m119.3125,179.63751l-40,0"
+              marker-end="url(#se_marker_end_svg_19)" stroke="#48505e" id="svg_19"/>
+        <circle stroke-width="3" stroke="#fbbd08" fill-opacity="0.1" fill="#fbbd08" r="24" cx="143.98438" cy="181.24688"
+                class="yellow scale-up" id="svg_20"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" fill="black" x="145.3125" y="184.15313" text-anchor="middle" class="scale-up" id="svg_21">
+            i0Mnj...
+        </text>
+        <rect x="306.71339" y="118.76379" height="20" width="66" rx="7" ry="7" class="orange scale-up" fill="#fb8008"
+              fill-opacity="0.3" stroke="#fb8008" stroke-width="2" id="svg_12"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" x="341.56338" y="131.86469" text-anchor="middle" class="scale-up ref-name" fill="black"
+              font-weight="bold" id="svg_13">master
+        </text>
+        <rect id="svg_26" height="0" width="0.75" y="29.35" x="96.28745" stroke-dasharray="null" stroke-width="2"
+              fill="black"/>
+        <path fill="none" stroke-width="2" d="m340.59233,138.18199l-0.05631,9.08622" id="svg_27"
+              marker-end="url(#se_marker_end_svg_27)" stroke="#fb8008"/>
+        <circle stroke-width="3" stroke="#74bf54" fill-opacity="0.3" fill="#74bf54" r="24" cx="242.43756" cy="65.02628"
+                class="yellow scale-up" id="svg_39"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" fill="black" x="243.19147" y="68.42472" text-anchor="middle" class="scale-up" id="svg_40">
+            lt0Kj...
+        </text>
+        <rect x="208.77188" y="3.37678" height="20" width="66" rx="7" ry="7" class="orange scale-up" fill="#fb8008"
+              fill-opacity="0.3" stroke="#fb8008" stroke-width="2" id="svg_44"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" x="241.52811" y="17.32142" text-anchor="middle" class="scale-up ref-name" fill="black"
+              font-weight="bold" id="svg_45">feature
+        </text>
+        <path marker-end="url(#se_marker_end_svg_46)" fill="none" stroke-width="2"
+              d="m242.36688,23.83722l-0.05631,9.08621" stroke="#fb8008" id="svg_46"/>
+        <path stroke="#48505e" transform="rotate(-7.456743240356445 193.75640869140634,117.12714385986321) "
+              fill="#ffff56" stroke-width="3" stroke-dasharray="null" d="m227.58225,85.96266l-67.65169,62.32897"
+              id="svg_47" marker-end="url(#se_marker_end_svg_47)"/>
+        <path id="svg_3" fill="null" stroke-width="3" stroke-dasharray="null" d="m217.82813,180.97188l-40,0"
+              marker-end="url(#se_marker_end_svg_19)" stroke="#48505e"/>
+        <circle id="svg_4" stroke-width="3" stroke="#fbbd08" fill-opacity="0.1" fill="#fbbd08" r="24" cx="242.92188"
+                cy="179.95625" class="yellow scale-up"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_7" fill="black" x="244.25" y="184.55" text-anchor="middle" class="scale-up">
+            oU6td...
+        </text>
+        <circle id="svg_14" stroke-width="3" stroke="#bf0000" fill-opacity="0.3" fill="#bf0000" r="24" cx="341.48438"
+                cy="179.5625" class="yellow scale-up"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" id="svg_15" fill="black" x="343.23438" y="183.3125" text-anchor="middle" class="scale-up">
+            mN5nj...
+        </text>
+        <path id="svg_16" fill="null" stroke-width="3" stroke-dasharray="null" d="m316.48438,180.125l-40,0"
+              marker-end="url(#se_marker_end_svg_19)" stroke="#48505e"/>
+        <line fill="none" stroke="#bf0000" stroke-width="3" stroke-dasharray="5,5" fill-opacity="0.3" x1="371.13049"
+              y1="181.00939" x2="428.50549" y2="181.00939" id="svg_38" stroke-opacity="0.5"/>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" font-weight="bold" fill="#bf0000" class="scale-up ref-name" text-anchor="middle"
+              y="179.1021" x="447.86597" stroke-opacity="0.8" id="svg_49">merge
+        </text>
+        <text font-family="Lato, Helvetica Neue, Arial, Helvetica, Lato, Helvetica Neue, Arial, Helvetica, sans-serif"
+              font-size="12" style="cursor: move;" id="svg_1" font-weight="bold" fill="#bf0000"
+              class="scale-up ref-name" text-anchor="middle" y="190.38256" x="448.33471" stroke-opacity="0.8">commit
+        </text>
+        <path stroke="#48505e" id="svg_2" transform="rotate(88.69806671142578 292.875,127.28904724121095) "
+              fill="#ffff56" stroke-width="3" stroke-dasharray="null" d="m328.32296,97.24826l-70.89593,60.08159"
+              marker-end="url(#se_marker_end_svg_47)"/>
+    </g>
+</svg>

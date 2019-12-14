@@ -1,0 +1,188 @@
+<svg width="600" height="380" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+    <defs>
+        <marker id="se_marker_mid_svg_34" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_8" d="m0,50l100,40l-30,-40l30,-40l-100,40z" fill="#00adb5" stroke="#00adb5"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_end_svg_34" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_9" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#00adb5" stroke="#00adb5"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_mid_svg_21" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_10" d="m0,50l100,40l-30,-40l30,-40l-100,40z" fill="#a333c8" stroke="#a333c8"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_end_svg_21" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_11" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#a333c8" stroke="#a333c8"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_mid_svg_22" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_13" d="m0,50l100,40l-30,-40l30,-40l-100,40z" fill="#a333c8" stroke="#a333c8"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_end_svg_22" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_14" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#a333c8" stroke="#a333c8"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_mid_svg_26" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_16" d="m0,50l100,40l-30,-40l30,-40l-100,40z" fill="#2185d0" stroke="#2185d0"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_end_svg_26" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_17" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#2185d0" stroke="#2185d0"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_end_svg_52" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_20" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#00adb5" stroke="#00adb5"
+                  stroke-width="10"/>
+        </marker>
+        <marker id="se_marker_end_svg_53" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5"
+                markerHeight="5" refX="50" refY="50">
+            <path id="svg_23" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#2185d0" stroke="#2185d0"
+                  stroke-width="10"/>
+        </marker>
+    </defs>
+    <g display="inline">
+        <title>background</title>
+        <g stroke="null" display="none" id="canvasGrid">
+            <rect stroke="null" fill="url(#gridpattern)" stroke-width="0" y="3.555556" x="67.555557" height="371.555557"
+                  width="587.555552" id="svg_4"/>
+        </g>
+    </g>
+    <g display="inline">
+        <title>Layer 1</title>
+        <rect rx="13" fill-opacity="0.2" stroke="#00adb5" id="svg_1" height="65" width="143.999992" y="136.327779"
+              x="23.888889" stroke-width="4" fill="#00adb5"/>
+        <rect rx="13" fill-opacity="0.2" stroke="#2185d0" id="svg_2" height="65" width="143.999992" y="135.327779"
+              x="425.451389" stroke-width="3" fill="#2185d0" stroke-dasharray="null"
+        />
+        <rect rx="13" stroke-opacity="0.8" fill-opacity="0.2" stroke="#a333c8" id="svg_3" height="65" width="143.999992"
+              y="135.327779" x="223.888889" stroke-width="4" fill="#a333c8"/>
+        <text font-weight="bold" font-style="normal" xml:space="preserve" text-anchor="start"
+              font-family="Helvetica, Arial, Lato, Helvetica Neue, Arial, Helvetica, sans-serif" font-size="16"
+              id="svg_5" y="174.777779" x="30.888889"
+              fill-opacity="0.8" stroke-opacity="0.8" stroke-width="0" stroke="#a333c8"
+              fill="#000000">Katalog Roboczy</text>
+        <text font-weight="bold" font-style="normal" xml:space="preserve" text-anchor="start"
+              font-family="Helvetica, Arial, Lato, Helvetica Neue, Arial, Helvetica, sans-serif" font-size="16"
+              id="svg_6" y="174.827779" x="240.388889"
+              fill-opacity="0.8" stroke-opacity="0.8" stroke-width="0" stroke="#a333c8"
+              fill="#000000">Przechowalnia</text>
+        <text font-weight="bold" font-style="normal" xml:space="preserve" text-anchor="start"
+              font-family="Helvetica, Arial, Lato, Helvetica Neue, Arial, Helvetica, sans-serif" font-size="16"
+              id="svg_7" y="174.777779" x="441.552952"
+              fill-opacity="0.8" stroke-opacity="0.8" stroke-width="0" stroke="#a333c8"
+              fill="#000000">Repozytorium</text>
+        <path id="svg_12" fill-opacity="0.2" stroke-opacity="null" stroke-width="4" stroke="#00adb5" fill="none"/>
+        <path id="svg_15" fill-opacity="0.2" stroke-opacity="null" stroke-width="4" stroke="#00adb5" fill="none"/>
+        <path id="svg_18" fill-opacity="0.2" stroke-opacity="null" stroke-width="4" stroke="#00adb5" fill="none"/>
+        <path id="svg_19" d="m-34,128" fill-opacity="0.2" stroke-opacity="null" stroke-width="4" stroke="#00adb5"
+              fill="none"/>
+        <path id="svg_25" d="m179.388889,58.827779" opacity="0.5" fill-opacity="0.2" stroke-opacity="null"
+              stroke="#00adb5" fill="none"/>
+        <path id="svg_27" fill-opacity="0.2" stroke-opacity="null" stroke-width="null" stroke="#00adb5" fill="none"/>
+        <path id="svg_28" d="m149.388889,135.827779" opacity="0.5" fill-opacity="0.2" stroke-opacity="null"
+              stroke-width="null" stroke="#00adb5" fill="none"/>
+        <path id="svg_34" d="m142.237771,132.031029c23.394813,-33.812224 77.648117,-24.841316 97.170291,-2.714669"
+              fill-opacity="0.2" stroke-width="3" fill="none" marker-mid="url(#se_marker_mid_svg_34)"
+              marker-end="url(#se_marker_end_svg_34)"
+              transform="rotate(-3.614490270614624 190.82290649414105,120.83133697509771) " stroke="#00adb5"/>
+        <path d="m348.333259,131.868523c23.39482,-33.81222 77.64812,-24.84132 97.17029,-2.71467" fill-opacity="0.2"
+              stroke-width="3" fill="none" marker-mid="url(#se_marker_mid_svg_21)" stroke-opacity="0.8"
+              marker-end="url(#se_marker_end_svg_21)"
+              transform="rotate(-3.614490270614624 396.91839599609415,120.66883087158241) " stroke="#a333c8"
+              id="svg_21"/>
+        <path d="m150.095756,226.968508c23.39482,-33.81222 77.64812,-24.84132 97.17029,-2.71467" fill-opacity="0.2"
+              stroke-width="3" fill="none" marker-mid="url(#se_marker_mid_svg_22)" stroke-opacity="0.8"
+              marker-end="url(#se_marker_end_svg_22)"
+              transform="rotate(176.77975463867188 198.680908203125,215.7688140869141) " stroke="#a333c8" id="svg_22"/>
+        <path d="m357.381602,226.004447c23.39482,-33.81222 77.64812,-24.84132 97.17029,-2.71467" fill-opacity="0.2"
+              stroke-width="3" fill="none" marker-mid="url(#se_marker_mid_svg_26)"
+              marker-end="url(#se_marker_end_svg_26)"
+              transform="rotate(176.77975463867188 405.96673583984375,214.80474853515625) " stroke="#2185d0"
+              id="svg_26"/>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="-13.507583" y="91.184606" id="svg_31" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="normal"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" font-weight="bold">git add</text>
+        <text fill="#000000" stroke="#00adb5" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.2" x="103.088926" y="79.727775" id="svg_33" font-size="24"
+              font-family="Monospace" text-anchor="middle" xml:space="preserve"/>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="374.521418" y="91.626785" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="normal"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_36" font-weight="bold">git commit</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="-41.783192" y="354.093185" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="normal"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_37" font-weight="bold">git checkout</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="40" y="390.093185" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="normal"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_37" font-weight="bold">git rm --cached</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="327.064255" y="354.093198" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="normal"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_38" font-weight="bold">git reset</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="80.993444" y="89.875372" font-size="24" font-family="Monospace" text-anchor="middle"
+              xml:space="preserve" font-style="italic"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_39">pliki</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="98.280176" y="352.274975" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="italic"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_40"> -- pliki</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="449.835699" y="352.273997" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="italic"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_41"> -- pliki</text>
+        <path fill="#ffffff" stroke-width="3" stroke-dasharray="null"
+              fill-opacity="0.01"
+              d="m86.138927,137.627774c67.545496,-125.114243 333.080601,-120.990308 411.750014,-10.936496" id="svg_52"
+              stroke="#00adb5" marker-end="url(#se_marker_end_svg_52)"/>
+        <path fill="#ffffff" stroke-width="3" stroke-dasharray="null"
+              fill-opacity="0.01"
+              d="m72.952508,304.133583c62.541156,-148.74017 412.905493,-127.667502 448.603674,-12.399338"
+              marker-end="url(#se_marker_end_svg_53)" id="svg_53"
+              transform="rotate(-179.6372528076172 297.2543640136719,251.51885986328128) " stroke="#2185d0"/>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="142.379421" y="-25.213925" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="normal"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" font-weight="bold" id="svg_54">git commit -a</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="275.734978" y="-25.21534" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="italic"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_55">pliki</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="121.228828" y="485.033123" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="normal"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" font-weight="bold" id="svg_56">git checkout HEAD</text>
+        <text fill="#000000" stroke-width="0" stroke-dasharray="null"
+              fill-opacity="0.8" x="305.65342" y="483.728389" font-size="24" font-family="Monospace"
+              text-anchor="middle" xml:space="preserve" font-style="italic"
+              transform="matrix(0.5815412722841414,0,0,0.5773646980397587,181.53918188901608,45.22081919118072) "
+              stroke="#00adb5" id="svg_57"> -- pliki</text>
+    </g>
+</svg>
