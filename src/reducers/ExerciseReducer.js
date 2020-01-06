@@ -1,6 +1,6 @@
-import {actions, exerciseActions} from '../actions/Action';
+import {modeChangeActions, exerciseActions} from '../actions/Action';
 import {addCommit, addRef, checkoutRef, checkExerciseStatus, rebase, reset, pull} from './ActionHandler';
-import {exercisesState, initialAnimationState} from './ExercisesAnimationReducerStates';
+import {exercisesState, initialAnimationState} from './ExerciseReducerState';
 
 const initialExercisesState = {
     ...initialAnimationState,
@@ -9,47 +9,47 @@ const initialExercisesState = {
     activeExercise: null,
 };
 
-export const exerciseAnimationReducer = (state = initialExercisesState, action) => {
+export const exerciseReducer = (state = initialExercisesState, action) => {
     switch (action.type) {
-        case actions.MOVE_TO_EXERCISE:
+        case modeChangeActions.MOVE_TO_EXERCISE:
             return {
                 ...state,
                 ...exercisesState[action.exerciseName].initial,
                 isExerciseDisplayed: true,
                 activeExercise: action.exerciseName,
             };
-        case actions.MOVE_TO_CONTENT:
+        case modeChangeActions.MOVE_TO_CONTENT:
             return {
                 ...initialExercisesState,
                 isExerciseDisplayed: false,
                 activeExercise: null,
             };
-        case actions.ADD_COMMIT:
+        case exerciseActions.ADD_COMMIT:
             return {
                 ...addCommit(state, false),
             };
-        case actions.ADD_MERGE_COMMIT:
+        case exerciseActions.ADD_MERGE_COMMIT:
             return {
                 ...addCommit(state, true, action.refName),
             };
-        case actions.ADD_REF:
+        case exerciseActions.ADD_REF:
             return {
                 ...addRef(state, action.name),
             };
-        case actions.CHECKOUT_REF:
+        case exerciseActions.CHECKOUT_REF:
             return {
                 ...checkoutRef(state, action.name),
             };
-        case actions.REBASE:
+        case exerciseActions.REBASE:
             return {
                 ...rebase(state, action.refName),
             };
-        case actions.RESET:
+        case exerciseActions.RESET:
             return {
                 ...reset(state, action.commitsToReset),
             };
 
-        case actions.PULL:
+        case exerciseActions.PULL:
             return {
                 ...pull(state),
             };

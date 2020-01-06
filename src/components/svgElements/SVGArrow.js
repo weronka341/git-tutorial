@@ -47,7 +47,6 @@ const renderMergeArrow = (x1, x2, y1, y2, positionY) => {
     const pathLeftInverted = `m 40 0 l ${x1 - x2 - 60} 0  q 20 0 20 20 l 0 ${(y2 - y1 + 44) * -1}`;
     const pathRight = `m ${x2 - x1} 40 l 0 ${y2 - y1 - 60} q 0 20 -20 20 l -${x2 - x1 - 45} 0`;
     const pathRightInverted = `m ${x2 - x1} -${y1 - y2 - 40} l 0 ${y1 - y2 - 60} q 0 20 -20 20 l -${x2 - x1 - 45} 0`;
-    debugger;
     return (
         <svg x={x1 > x2 ? x2 : x1} y={`${positionY}%`} width={Math.abs(x2 - x1)} height={Math.abs(y1 - y2)}>
             {y2 > y1 && x2 < x1 &&

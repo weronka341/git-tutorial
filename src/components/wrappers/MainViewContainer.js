@@ -3,10 +3,10 @@ import {
     Segment,
     Sidebar,
 } from 'semantic-ui-react';
-import {SidebarWrapper} from './SidebarWrapper';
+import {SidebarWrapper} from '../../containers/SidebarWrapper';
 import {BottomBarWrapper} from './BottomBarWrapper';
-import {TitleBar} from '../components/titleBar/TitleBar';
-import {TutorialContentContainer} from './tutorialContentContainer/TutorialContentContainer';
+import {TitleBar} from '../../containers/titleBar/TitleBar';
+import {TutorialContentContainer} from '../../containers/tutorialContentContainer/TutorialContentContainer';
 
 export const MainViewContainer = () => {
 

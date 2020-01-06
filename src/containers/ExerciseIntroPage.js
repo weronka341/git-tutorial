@@ -4,7 +4,7 @@ import {fullTitles} from '../content/titles/SectionTitles';
 import {exercisesText} from '../content/tutorial/ExercisesText';
 import '../content/tutorial/TutorialTextStyle.css';
 import {moveToExercise, setVisibility} from '../actions/ActionCreator';
-import {actions} from '../actions/Action';
+import {visibilityChangeActions} from '../actions/Action';
 import {connect} from 'react-redux';
 
 export const Exercise = (props) => {
@@ -39,16 +39,16 @@ export const Exercise = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        activeOption: state.options.activeOption,
-        visitedOptions: state.options.visitedOptions,
+        activeOption: state.sidebar.activeOption,
+        visitedOptions: state.sidebar.visitedOptions,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         moveToExercise: (exerciseName) => dispatch(moveToExercise(exerciseName)),
-        hideSidebar: () => dispatch(setVisibility(actions.SET_SIDEBAR_VISIBILITY, false)),
-        showConsole: () => dispatch(setVisibility(actions.SET_BOTTOMBAR_VISIBILITY, true)),
+        hideSidebar: () => dispatch(setVisibility(visibilityChangeActions.SET_SIDEBAR_VISIBILITY, false)),
+        showConsole: () => dispatch(setVisibility(visibilityChangeActions.SET_BOTTOMBAR_VISIBILITY, true)),
     }
 };
 

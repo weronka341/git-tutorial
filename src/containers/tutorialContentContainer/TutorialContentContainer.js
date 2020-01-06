@@ -11,11 +11,11 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {renderSelectedTutorialSection} from '../../utils/RenderUtil';
 import {performActionOnSidebarOption} from '../../actions/ActionCreator';
-import {actions} from '../../actions/Action';
+import {sidebarActions} from '../../actions/Action';
 import {menuOptionsTitles} from '../../content/titles/SectionTitles';
 import {SVGDisplayArea} from '../svgDisplayArea/SVGDisplayArea';
 import {exercisesText} from '../../content/tutorial/ExercisesText';
-import {ExerciseHelperMenu} from '../../components/exerciseHelperMenu/ExerciseHelperMenu';
+import {ExerciseHelperMenu} from '../exerciseHelperMenu/ExerciseHelperMenu';
 import originMaster from '../../images/originMaster.png';
 import './TutorialContentContainer.css';
 
@@ -111,17 +111,17 @@ TutorialContent.propTypes = {
 const mapStateToProps = (state) => {
     return {
         isSidebarVisible: state.visibility.sidebarVisible,
-        activeOption: state.options.activeOption,
-        visitedOptions: state.options.visitedOptions,
-        isExerciseDisplayed: state.animations.isExerciseDisplayed,
-        activeExercise: state.animations.activeExercise,
+        activeOption: state.sidebar.activeOption,
+        visitedOptions: state.sidebar.visitedOptions,
+        isExerciseDisplayed: state.exercise.isExerciseDisplayed,
+        activeExercise: state.exercise.activeExercise,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setActive: (option) => dispatch(performActionOnSidebarOption(actions.SET_ACTIVE_SIDEBAR_OPTION, option)),
-        addToVisited: (option) => dispatch(performActionOnSidebarOption(actions.ADD_OPTION_TO_VISITED, option)),
+        setActive: (option) => dispatch(performActionOnSidebarOption(sidebarActions.SET_ACTIVE_SIDEBAR_OPTION, option)),
+        addToVisited: (option) => dispatch(performActionOnSidebarOption(sidebarActions.ADD_OPTION_TO_VISITED, option)),
     }
 };
 

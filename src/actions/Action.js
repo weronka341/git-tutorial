@@ -1,8 +1,20 @@
-export const actions = {
+export const visibilityChangeActions = {
     SET_SIDEBAR_VISIBILITY: 'SET_SIDEBAR_VISIBILITY',
     SET_BOTTOMBAR_VISIBILITY: 'SET_BOTTOMBAR_VISIBILITY',
+};
+
+export const sidebarActions = {
     SET_ACTIVE_SIDEBAR_OPTION: 'SET_ACTIVE_SIDEBAR_OPTION',
     ADD_OPTION_TO_VISITED: 'ADD_OPTION_TO_VISITED',
+};
+
+export const modeChangeActions = {
+    MOVE_TO_EXERCISE: 'MOVE_TO_EXERCISE',
+    MOVE_TO_CONTENT: 'MOVE_TO_CONTENT',
+};
+
+export const exerciseActions = {
+    CHECK_EXERCISE_STATUS: 'CHECK_EXERCISE_STATUS',
     ADD_COMMIT: 'ADD_COMMIT',
     ADD_REF: 'ADD_REF',
     CHECKOUT_REF: 'CHECKOUT_REF',
@@ -13,10 +25,4 @@ export const actions = {
     REBASE: 'REBASE',
     RESET: 'RESET',
     PULL: 'PULL',
-    MOVE_TO_EXERCISE: 'MOVE_TO_EXERCISE',
-    MOVE_TO_CONTENT: 'MOVE_TO_CONTENT',
-};
-
-export const exerciseActions = {
-    CHECK_EXERCISE_STATUS: 'CHECK_EXERCISE_STATUS',
 };

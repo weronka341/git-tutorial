@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux'
-import {visibilityReducer} from './VisibilityReducer';
-import {sidebarOptionsReducer} from './SidebarOptionsReducer';
-import {exerciseAnimationReducer} from './ExercisesAnimationsReducer';
+import {visibilityChangeReducer} from './VisibilityChangeReducer';
+import {sidebarReducer} from './SidebarReducer';
+import {exerciseReducer} from './ExerciseReducer';
 
 export default combineReducers({
-    visibility: visibilityReducer,
-    options: sidebarOptionsReducer,
-    animations: exerciseAnimationReducer,
+    visibility: visibilityChangeReducer,
+    sidebar: sidebarReducer,
+    exercise: exerciseReducer,
 });

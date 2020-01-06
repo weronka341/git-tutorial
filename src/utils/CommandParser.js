@@ -1,4 +1,4 @@
-import {actions} from '../actions/Action';
+import {exerciseActions} from '../actions/Action';
 
 const allowedCommands = [
     'commit',
@@ -46,7 +46,7 @@ const validateCommandAndPrepareAction = (commandWords, refs, activeRef) => {
 };
 
 const validateCommitCommand = (commandWords) => {
-    const actionObject = {type: actions.ADD_COMMIT};
+    const actionObject = {type: exerciseActions.ADD_COMMIT};
     if (commandWords.length === 2)
         return actionObject;
     return commandWords[2] === '-m' && commandWords[3].match(/('.*?'|".*?")/g)
@@ -60,7 +60,7 @@ const validateCheckoutCommand = (commandWords, refs) => {
     const refName = commandWords[2];
     if (commandWords.length === 3 && checkIfBranchExists(refs, refName))
         return {
-            type: actions.CHECKOUT_REF,
+            type: exerciseActions.CHECKOUT_REF,
             ref: refName,
         };
     else
@@ -73,7 +73,7 @@ const validateCheckoutWithBranchCommand = (commandWords, refs) => {
         const validName = validateRefName(newRefName);
         if (!checkIfBranchExists(refs, newRefName) && validName)
             return {
-                type: actions.CHECKOUT_REF_B,
+                type: exerciseActions.CHECKOUT_REF_B,
                 ref: validName,
             };
     } else if (commandWords.length === 5) {
@@ -82,7 +82,7 @@ const validateCheckoutWithBranchCommand = (commandWords, refs) => {
         const validName = validateRefName(newRefName);
         if (checkIfBranchExists(refs, baseRefName) && !checkIfBranchExists(refs, newRefName) && validName)
             return {
-                type: actions.CREATE_AND_CHECKOUT_REF_FROM_REF,
+                type: exerciseActions.CREATE_AND_CHECKOUT_REF_FROM_REF,
                 newRef: validName,
                 baseRef: baseRefName,
             };
@@ -110,7 +110,7 @@ const validateBranchCommand = (commandWords, refs, activeRef) => {
         const validName = validateRefName(refName);
         if (!checkIfBranchExists(refs, refName) && validName) {
             return {
-                type: actions.ADD_REF,
+                type: exerciseActions.ADD_REF,
                 ref: validName,
             };
         }
@@ -120,7 +120,7 @@ const validateBranchCommand = (commandWords, refs, activeRef) => {
         const validName = validateRefName(newRefName);
         if (checkIfBranchExists(refs, baseRefName) && !checkIfBranchExists(refs, newRefName) && validName)
             return {
-                type: actions.CREATE_REF_FROM_REF,
+                type: exerciseActions.CREATE_REF_FROM_REF,
                 newRef: validName,
                 baseRef: baseRefName,
                 activeRef: activeRef.name,
@@ -134,7 +134,7 @@ const validateMergeCommand = (commandWords, refs, activeRef) => {
         const refName = commandWords[2];
         if (checkIfBranchExists(refs, refName) && refName !== activeRef.name)
             return {
-                type: actions.ADD_MERGE_COMMIT,
+                type: exerciseActions.ADD_MERGE_COMMIT,
                 refName: refName,
             };
     }
@@ -146,7 +146,7 @@ const validateRebaseCommand = (commandWords, refs, activeRef) => {
         const refName = commandWords[2];
         if (checkIfBranchExists(refs, refName) && refName !== activeRef.name)
             return {
-                type: actions.REBASE,
+                type: exerciseActions.REBASE,
                 refName: refName,
             };
     }
@@ -158,7 +158,7 @@ const validateResetCommand = (commandWords) => {
         const match = /^HEAD~([1-4])$/g.exec(commandWords[2]);
         if (match && match[1])
             return {
-                type: actions.RESET,
+                type: exerciseActions.RESET,
                 commitsToReset: match[1],
             };
     }
@@ -168,7 +168,7 @@ const validateResetCommand = (commandWords) => {
 const validatePullCommand = (commandWords) => {
     if (commandWords.length === 2) {
         return {
-            type: actions.PULL,
+            type: exerciseActions.PULL,
         };
     }
     return {message: ' - wystarczy git pull :P'};

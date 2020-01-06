@@ -1,18 +1,18 @@
-import {actions} from '../actions/Action';
+import {sidebarActions} from '../actions/Action';
 
 const initialTableOfContentState = {
     activeOption: 'INTRODUCTION',
     visitedOptions: ['INTRODUCTION'],
 };
 
-export const sidebarOptionsReducer = (state = initialTableOfContentState, action) => {
+export const sidebarReducer = (state = initialTableOfContentState, action) => {
     switch (action.type) {
-        case actions.SET_ACTIVE_SIDEBAR_OPTION:
+        case sidebarActions.SET_ACTIVE_SIDEBAR_OPTION:
             return {
                 ...state,
                 activeOption: action.optionID
             };
-        case actions.ADD_OPTION_TO_VISITED:
+        case sidebarActions.ADD_OPTION_TO_VISITED:
             return {
                 ...state,
                 visitedOptions: state.visitedOptions.concat(action.optionID)

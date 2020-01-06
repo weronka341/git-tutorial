@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {actions} from '../../actions/Action';
+import {sidebarActions} from '../../actions/Action';
 import {Icon, Step} from 'semantic-ui-react';
 import {menuOptionsTitles} from '../../content/titles/SectionTitles';
 import {performActionOnSidebarOption} from '../../actions/ActionCreator';
@@ -55,15 +55,15 @@ SidebarOptionsComponent.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        activeOption: state.options.activeOption,
-        visitedOptions: state.options.visitedOptions,
+        activeOption: state.sidebar.activeOption,
+        visitedOptions: state.sidebar.visitedOptions,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setActive: (option) => dispatch(performActionOnSidebarOption(actions.SET_ACTIVE_SIDEBAR_OPTION, option)),
-        addToVisited: (option) => dispatch(performActionOnSidebarOption(actions.ADD_OPTION_TO_VISITED, option))
+        setActive: (option) => dispatch(performActionOnSidebarOption(sidebarActions.SET_ACTIVE_SIDEBAR_OPTION, option)),
+        addToVisited: (option) => dispatch(performActionOnSidebarOption(sidebarActions.ADD_OPTION_TO_VISITED, option))
     }
 };
 

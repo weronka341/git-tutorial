@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {SVGCommitElement} from '../../components/svgElements/SVGCommitElement';
+import {SVGCommit} from '../../components/svgElements/SVGCommit';
 import {SVGArrow} from '../../components/svgElements/SVGArrow';
-import {SVGRefElement} from '../../components/svgElements/SVGRefElement';
+import {SVGRef} from '../../components/svgElements/SVGRef';
 import './SVGDisplayArea.css';
 
 class SVGDisplay extends React.Component {
@@ -23,14 +23,14 @@ class SVGDisplay extends React.Component {
     renderCommits() {
         const {commits, dimensions, activeExercise} = this.props;
         return commits.map(commit =>
-            <SVGCommitElement key={commit.index}
-                              cx={this.calculateCommitXPosition(commit.index)}
-                              hash={commit.hash}
-                              positionY={dimensions.commit.positionY}
-                              offset={this.calculateCommitYOffset(commit.index)}
-                              radius={dimensions.commit.radius}
-                              isRebaseExerciseActive={activeExercise === 'REBASE_EXERCISE'}
-                              color={commit.color}
+            <SVGCommit key={commit.index}
+                       cx={this.calculateCommitXPosition(commit.index)}
+                       hash={commit.hash}
+                       positionY={dimensions.commit.positionY}
+                       offset={this.calculateCommitYOffset(commit.index)}
+                       radius={dimensions.commit.radius}
+                       isRebaseExerciseActive={activeExercise === 'REBASE_EXERCISE'}
+                       color={commit.color}
             />
         );
     }
@@ -65,12 +65,12 @@ class SVGDisplay extends React.Component {
     renderRefs() {
         const {refs, dimensions} = this.props;
         return refs.map((ref, index) =>
-            <SVGRefElement key={index}
-                           x={this.calculateCommitXPosition(ref.commit)}
-                           name={ref.name}
-                           position={ref.position}
-                           positionY={dimensions.commit.positionY}
-                           offset={this.calculateCommitYOffset(ref.commit)}
+            <SVGRef key={index}
+                    x={this.calculateCommitXPosition(ref.commit)}
+                    name={ref.name}
+                    position={ref.position}
+                    positionY={dimensions.commit.positionY}
+                    offset={this.calculateCommitYOffset(ref.commit)}
             />
         );
     }
@@ -113,12 +113,12 @@ class SVGDisplay extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        commits: state.animations.commits,
-        dimensions: state.animations.dimensions,
-        arrows: state.animations.arrows,
-        refs: state.animations.refs,
-        activeExercise: state.animations.activeExercise,
-        isExerciseCompleted: state.animations.isExerciseCompleted,
+        commits: state.exercise.commits,
+        dimensions: state.exercise.dimensions,
+        arrows: state.exercise.arrows,
+        refs: state.exercise.refs,
+        activeExercise: state.exercise.activeExercise,
+        isExerciseCompleted: state.exercise.isExerciseCompleted,
     }
 };
 

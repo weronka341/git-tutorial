@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {setVisibility} from '../actions/ActionCreator';
-import {actions} from '../actions/Action';
+import {visibilityChangeActions} from '../actions/Action';
 import {Menu, Sidebar} from 'semantic-ui-react';
-import {SidebarOptions} from '../components/sidebarOptions/SidebarOptions';
+import {SidebarOptions} from './sidebarOptions/SidebarOptions';
 
 const SidebarWrapperComponent = (props) => {
     return (
@@ -42,7 +42,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onHide: (isVisible) => dispatch(setVisibility(actions.SET_SIDEBAR_VISIBILITY, isVisible)),
+        onHide: (isVisible) => dispatch(setVisibility(visibilityChangeActions.SET_SIDEBAR_VISIBILITY, isVisible)),
     }
 };
 

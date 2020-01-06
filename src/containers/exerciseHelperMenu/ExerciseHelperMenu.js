@@ -7,10 +7,10 @@ import {
     performActionOnSidebarOption,
     setVisibility
 } from '../../actions/ActionCreator';
-import {Tip} from '../tip/Tip';
+import {Tip} from '../../components/tip/Tip';
 import {exercisesText} from '../../content/tutorial/ExercisesText';
-import {actions} from '../../actions/Action';
-import {selectNextOption} from '../../containers/tutorialContentContainer/TutorialContentContainer';
+import {visibilityChangeActions, sidebarActions} from '../../actions/Action';
+import {selectNextOption} from '../tutorialContentContainer/TutorialContentContainer';
 import './ExerciseHelperMenu.css';
 
 export const ExerciseHelper = (props) => {
@@ -99,10 +99,10 @@ const handleCompleteExercise = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        activeOption: state.options.activeOption,
-        visitedOptions: state.options.visitedOptions,
-        activeExercise: state.animations.activeExercise,
-        isExerciseCompleted: state.animations.isExerciseCompleted,
+        activeOption: state.sidebar.activeOption,
+        visitedOptions: state.sidebar.visitedOptions,
+        activeExercise: state.exercise.activeExercise,
+        isExerciseCompleted: state.exercise.isExerciseCompleted,
     }
 };
 
@@ -110,10 +110,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         moveToExercise: (exerciseName) => dispatch(moveToExercise(exerciseName)),
         moveToContent: () => dispatch(moveToContent()),
-        showSidebar: () => dispatch(setVisibility(actions.SET_SIDEBAR_VISIBILITY, true)),
-        hideConsole: () => dispatch(setVisibility(actions.SET_BOTTOMBAR_VISIBILITY, false)),
-        setActive: (option) => dispatch(performActionOnSidebarOption(actions.SET_ACTIVE_SIDEBAR_OPTION, option)),
-        addToVisited: (option) => dispatch(performActionOnSidebarOption(actions.ADD_OPTION_TO_VISITED, option))
+        showSidebar: () => dispatch(setVisibility(visibilityChangeActions.SET_SIDEBAR_VISIBILITY, true)),
+        hideConsole: () => dispatch(setVisibility(visibilityChangeActions.SET_BOTTOMBAR_VISIBILITY, false)),
+        setActive: (option) => dispatch(performActionOnSidebarOption(sidebarActions.SET_ACTIVE_SIDEBAR_OPTION, option)),
+        addToVisited: (option) => dispatch(performActionOnSidebarOption(sidebarActions.ADD_OPTION_TO_VISITED, option))
     }
 };
 

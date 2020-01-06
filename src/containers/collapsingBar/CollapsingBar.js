@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {Container, Icon} from 'semantic-ui-react';
 import {setVisibility} from '../../actions/ActionCreator';
-import {actions} from '../../actions/Action';
+import {visibilityChangeActions} from '../../actions/Action';
 import './CollapsingBar.css';
 
 export const CollapsingBarComponent = (props) => {
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onClick: (isVisible) => dispatch(setVisibility(actions.SET_BOTTOMBAR_VISIBILITY, isVisible)),
+        onClick: (isVisible) => dispatch(setVisibility(visibilityChangeActions.SET_BOTTOMBAR_VISIBILITY, isVisible)),
     }
 };
 

@@ -1,5 +1,5 @@
 import {commitHashGenerator} from '../utils/CommitHashGenerator';
-import {exercisesState} from './ExercisesAnimationReducerStates';
+import {exercisesState} from './ExerciseReducerState';
 
 let colors = ['lime', 'peach', 'pink', 'dark-purple', 'purple', 'green', 'orange', 'yellow', 'teal', 'blue', 'red'];
 

@@ -1,4 +1,4 @@
-import {actions, exerciseActions} from './Action';
+import {exerciseActions, modeChangeActions} from './Action';
 
 export const setVisibility = (action, isVisible) => ({
     type: action,
@@ -11,26 +11,26 @@ export const performActionOnSidebarOption = (action, optionID) => ({
 });
 
 export const addCommit = () => ({
-    type: actions.ADD_COMMIT,
+    type: exerciseActions.ADD_COMMIT,
 });
 
 export const addMergeCommit = (refName) => ({
-    type: actions.ADD_MERGE_COMMIT,
+    type: exerciseActions.ADD_MERGE_COMMIT,
     refName,
 });
 
 export const rebase = (refName) => ({
-    type: actions.REBASE,
+    type: exerciseActions.REBASE,
     refName,
 });
 
 export const reset = (commitsToReset) => ({
-    type: actions.RESET,
+    type: exerciseActions.RESET,
     commitsToReset,
 });
 
 export const pull = () => ({
-    type: actions.PULL,
+    type: exerciseActions.PULL,
 });
 
 export const refAction = (action, name) => ({
@@ -39,12 +39,12 @@ export const refAction = (action, name) => ({
 });
 
 export const moveToExercise = (exerciseName) => ({
-    type: actions.MOVE_TO_EXERCISE,
+    type: modeChangeActions.MOVE_TO_EXERCISE,
     exerciseName,
 });
 
 export const moveToContent = () => ({
-    type: actions.MOVE_TO_CONTENT,
+    type: modeChangeActions.MOVE_TO_CONTENT,
 });
 
 export const checkExerciseStatus = () => ({

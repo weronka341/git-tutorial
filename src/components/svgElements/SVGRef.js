@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SVGRefElement = (props) => {
+export const SVGRef = (props) => {
     const refOffset = props.offset + (props.position * 20) + 60;
     const arrowOffset = props.offset + 40;
     return (

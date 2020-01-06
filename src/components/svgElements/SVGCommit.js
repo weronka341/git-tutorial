@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SVGCommitElement = (props) => {
+export const SVGCommit = (props) => {
     const origin = `0px ${-props.offset}px`;
     return (
         <svg x={props.cx} y={`${props.positionY}%`}>

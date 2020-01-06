@@ -10,12 +10,12 @@ import {
     refAction,
     reset
 } from '../../actions/ActionCreator';
-import {actions} from '../../actions/Action';
+import {exerciseActions} from '../../actions/Action';
 import {commandParser} from '../../utils/CommandParser';
 import {animateScroll} from 'react-scroll';
 import './CommandLine.css';
 
-class CommandLineComponent extends React.Component {
+class CommandLineContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -39,46 +39,46 @@ class CommandLineComponent extends React.Component {
         const action = commandParser(command, this.props.refs, this.props.activeRef);
         if (this.props.activeExercise !== 'PULL_EXERCISE') {
             switch (action && action.type) {
-                case actions.ADD_COMMIT:
+                case exerciseActions.ADD_COMMIT:
                     this.props.addCommit();
                     break;
-                case actions.ADD_REF:
+                case exerciseActions.ADD_REF:
                     this.props.addRef(action.ref);
                     break;
-                case actions.CHECKOUT_REF:
+                case exerciseActions.CHECKOUT_REF:
                     this.props.checkoutRef(action.ref);
                     break;
-                case actions.CHECKOUT_REF_B:
+                case exerciseActions.CHECKOUT_REF_B:
                     this.props.addRef(action.ref);
                     this.props.checkoutRef(action.ref);
                     break;
-                case actions.CREATE_AND_CHECKOUT_REF_FROM_REF:
+                case exerciseActions.CREATE_AND_CHECKOUT_REF_FROM_REF:
                     this.props.checkoutRef(action.baseRef);
                     this.props.addRef(action.newRef);
                     this.props.checkoutRef(action.newRef);
                     break;
-                case actions.CREATE_REF_FROM_REF:
+                case exerciseActions.CREATE_REF_FROM_REF:
                     this.props.checkoutRef(action.baseRef);
                     this.props.addRef(action.newRef);
                     this.props.checkoutRef(action.activeRef);
                     break;
-                case actions.ADD_MERGE_COMMIT:
+                case exerciseActions.ADD_MERGE_COMMIT:
                     this.props.addMergeCommit(action.refName);
                     break;
-                case actions.REBASE:
+                case exerciseActions.REBASE:
                     this.props.rebase(action.refName);
                     break;
-                case actions.RESET:
+                case exerciseActions.RESET:
                     this.props.reset(action.commitsToReset);
                     break;
                 default:
                     break;
             }
-            action.type === actions.PULL
+            action.type === exerciseActions.PULL
                 ? this.addCommandTextToDisplay(command, {message: ' - nie masz połączenia ze zdalnym repozytorium.'})
                 : this.addCommandTextToDisplay(command, action);
 
-        } else if (action && action.type && action.type === actions.PULL) {
+        } else if (action && action.type && action.type === exerciseActions.PULL) {
             this.props.pull();
             this.addCommandTextToDisplay(command, action);
         } else {
@@ -133,10 +133,10 @@ class CommandLineComponent extends React.Component {
 const mapStateToProps = (state) => {
     return {
         isVisible: state.visibility.bottomBarVisible,
-        refs: state.animations.refs,
-        activeRef: state.animations.activeRef,
-        isExerciseDisplayed: state.animations.isExerciseDisplayed,
-        activeExercise: state.animations.activeExercise,
+        refs: state.exercise.refs,
+        activeRef: state.exercise.activeRef,
+        isExerciseDisplayed: state.exercise.isExerciseDisplayed,
+        activeExercise: state.exercise.activeExercise,
     }
 };
 
@@ -144,13 +144,13 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addCommit: () => dispatch(addCommit()),
         addMergeCommit: (refName) => dispatch(addMergeCommit(refName)),
-        addRef: (name) => dispatch(refAction(actions.ADD_REF, name)),
+        addRef: (name) => dispatch(refAction(exerciseActions.ADD_REF, name)),
         rebase: (name) => dispatch(rebase(name)),
         reset: (commitsNumber) => dispatch(reset(commitsNumber)),
         pull: () => dispatch(pull()),
-        checkoutRef: (name) => dispatch(refAction(actions.CHECKOUT_REF, name)),
+        checkoutRef: (name) => dispatch(refAction(exerciseActions.CHECKOUT_REF, name)),
         checkExerciseStatus: (activeExercise) => dispatch(checkExerciseStatus(activeExercise)),
     }
 };
 
-export const CommandLine = connect(mapStateToProps, mapDispatchToProps)(CommandLineComponent);
+export const CommandLine = connect(mapStateToProps, mapDispatchToProps)(CommandLineContainer);

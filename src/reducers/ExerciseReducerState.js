@@ -8,7 +8,6 @@ export const initialAnimationState = {
             positionY: 40,
             radius: 24,
         },
-        shift: 100,
     },
 
     activeRef: {
