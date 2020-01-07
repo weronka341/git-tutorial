@@ -1,4 +1,4 @@
-# ,,Git - interaktywny tutorial''
+# Git - interaktywny tutorial
 
 A web app to learn distributed revision control system Git based on the React and Redux library. Written in Polish.
 
